@@ -1,0 +1,26 @@
+C:\Users\Elwood\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\bin\Debug\PlastecAddins.exe.config
+C:\Users\Elwood\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.vbprojResolveAssemblyReference.cache
+C:\Users\Elwood\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\Interop.EnRoute3.dll
+C:\Users\Elwood\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.vbproj.ResolveComReference.cache
+C:\Users\Elwood\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.Form1.resources
+C:\Users\Elwood\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.Resources.resources
+C:\Users\Elwood\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.vbproj.GenerateResource.Cache
+C:\Users\Elwood\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\bin\Debug\PlastecAddins.exe
+C:\Users\Elwood\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\bin\Debug\PlastecAddins.pdb
+C:\Users\Elwood\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\bin\Debug\PlastecAddins.xml
+C:\Users\Elwood\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.exe
+C:\Users\Elwood\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.xml
+C:\Users\Elwood\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.pdb
+C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\bin\Debug\PlastecAddins.exe.config
+C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\Interop.EnRoute3.dll
+C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.vbproj.ResolveComReference.cache
+C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.exe
+C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.xml
+C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.pdb
+C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\bin\Debug\PlastecAddins.exe
+C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\bin\Debug\PlastecAddins.pdb
+C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\bin\Debug\PlastecAddins.xml
+C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.vbprojResolveAssemblyReference.cache
+C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.Form1.resources
+C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.Resources.resources
+C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.vbproj.GenerateResource.Cache
