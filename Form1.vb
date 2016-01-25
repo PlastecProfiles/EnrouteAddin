@@ -26,18 +26,21 @@
     Dim centerz As Double
     Dim c1x As Double
     Dim b1x As Double
-
+    Dim b1y As Double
     Dim c1y As Double
     Dim c1z As Double
     Dim c2x As Double
     Dim c2y As Double
     Dim c2z As Double
+    Dim dia As Decimal
     Dim w0 As Double
     Dim w1 As Double
     Dim w2 As Double
     Dim w3 As Double
     Dim totalArea As Double
     Dim bit As Decimal
+    Dim bit2 As Decimal
+    Dim bit3 As Decimal
     Private Sub Move_to_Click(sender As Object, e As EventArgs) Handles Move_to.Click
 
         Enr = New EnRoute3.EnrouteApp
@@ -82,6 +85,9 @@
         Dim c2y = selec.MinY
         xxx = xxx - bit + 0.0001
         selec.MoveToTarget(xxx, c2y, 0, 0, 0, 0)
+        c1x = selec.MaxX
+        c1y = selec.MaxY
+        bit = NumericUpDown1.Value
     End Sub
 
     Private Sub Move_y_Click(sender As Object, e As EventArgs) Handles Move_y.Click
@@ -104,7 +110,61 @@
         Dim c2x = selec.MinX
         yyy = yyy - bit + 0.0001
         selec.MoveToTarget(c2x, yyy, 0, 0, 0, 0)
+        c1x = selec.MaxX
+        c1y = selec.MaxY
+        bit = NumericUpDown1.Value
     End Sub
+
+
+    Private Sub Circle_move_to_Click(sender As Object, e As EventArgs) Handles Circle_move_to.Click
+        Enr = New EnRoute3.EnrouteApp
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
+
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+
+        If selec.Count = 0 Then
+            MsgBox("Select an object")
+        End If
+        bit = NumericUpDown1.Value
+        bit2 = bit * 2
+        bit3 = bit / 2
+        Dim ddd = selec.MaxX - selec.MinX
+        Dim ddddd = CDec(ddd)
+        dia = ddddd - bit2
+        MsgBox(bit3)
+
+    End Sub
+
+    Private Sub Circle_move_Click(sender As Object, e As EventArgs) Handles Circle_move.Click
+        Enr = New EnRoute3.EnrouteApp
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
+
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+
+        If selec.Count = 0 Then
+            MsgBox("Select an object")
+        End If
+
+        Dim dia2 As Decimal = dia - bit3
+
+        Dim dia3 As Decimal = dia * 0.137
+        selec.MoveToTarget(dia + dia3, dia - dia2, 0, selec.MinX, selec.MinY, 0)
+    End Sub
+
+
+
 
     Private Sub Count_Click(sender As Object, e As EventArgs) Handles Count.Click
 
@@ -126,7 +186,7 @@
     End Sub
 
     Private Sub Edit_Start_Click(sender As Object, e As EventArgs) Handles Edit_Start.Click
-        ProgressBar1.PerformStep()
+
 
         Enr = New EnRoute3.EnrouteApp
         doc = Enr.ActiveDrawing
@@ -164,7 +224,8 @@
         If selec.Count = 0 Then
             MsgBox("Select an object")
         End If
-
+        b1x = 0
+        b1y = 0
         c1x = selec.MaxX - selec.MinX
         c1y = selec.MaxY - selec.MinY
         c2x = 0
@@ -176,12 +237,12 @@
             selec.RotateXY(1, c1x / 2, c1y / 2)
             c2x = selec.MaxX - selec.MinX
             c2y = selec.MaxY - selec.MinY
-            selec.MoveToTarget(c1x, c1y, 0, 0, 0, 0)
+            selec.MoveToTarget(b1x, b1y, 0, 0, 0, 0)
             a2 = c2x * c2y
         End If
         If a2 > a1 Then
             selec.RotateXY(-1, c1x / 2, c1y / 2)
-            selec.MoveToTarget(c1x, c1y, 0, 0, 0, 0)
+            selec.MoveToTarget(b1x, b1y, 0, 0, 0, 0)
         End If
         c1x = selec.MaxX - selec.MinX
         c1y = selec.MaxY - selec.MinY
@@ -209,35 +270,103 @@
         If selec.Count = 0 Then
             MsgBox("Select an object")
         End If
-        ' doc.SaveAs("test")
+
+        Dim iii = 1
+        ID = selec.Members.Item(iii).MemberHandle
 
 
 
 
+
+        'group = layer.CreateGroup
+        'contour = group.CreateContour
+        'seg = contour.Segments
         'selec.Copy()
 
-        ' doc.CreateLayer("Part 1", 2)
-        ' doc.CreateLayer("Part 2", 2)
-        ' selec.SelectLayer("Part 1")
-        'selec.Paste()
-        'selec.SelectLayer("Part2")
-        ' selec.Paste()
 
 
 
-
-
-        group = layer.CreateGroup
-        ' group.Clone()
-        ' contour = group.CreateContour
-        'contour.c
-        group.CreateText(FontName:="Arial", FontStyle:=1, Height:=1, TheText:="This creates text")
         'seg = contour.Segments
         ' segment = contour.Segments
         ' Dim yyy = arc.CenterX
 
-        ' MsgBox(yyy)
+
     End Sub
 
+    Private Sub Circle_Click(sender As Object, e As EventArgs) Handles Circle.Click
+        Enr = New EnRoute3.EnrouteApp()
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
 
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+
+        If selec.Count = 0 Then
+            MsgBox("Select an object")
+        End If
+        group = layer.CreateGroup
+        Dim xxx = selec.MaxX - selec.MinX
+        Dim yyy = selec.MaxY - selec.MinY
+        Dim ccx = selec.MaxX - xxx / 2
+        Dim ccy = selec.MaxY - yyy / 2
+        If xxx < yyy Then
+            group.CreateCircle(ccx, ccy, 0, yyy / 2)
+        Else
+            group.CreateCircle(ccx, ccy, 0, xxx / 2)
+
+        End If
+        selec.DeleteMembers()
+    End Sub
+
+    Private Sub Gapat_Click(sender As Object, e As EventArgs) Handles Gapat.Click
+        Enr = New EnRoute3.EnrouteApp
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
+
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+
+        If selec.Count = 0 Then
+            MsgBox("Select an object")
+        End If
+        c1x = 0
+        c1y = 0
+        bit = NumericUpDown1.Value
+        Dim gap = gapsize.Value
+        
+        Dim iii = 1
+
+        Dim yyy = 0
+
+        Dim xxx = 0
+        While iii < selec.Count
+            ID = selec.Members.Item(iii).MemberHandle
+            group = doc.FindGroup(ID)
+            c1x = group.MaxX
+            c1y = group.MaxY
+            xxx = CDec(c1x)
+            yyy = CDec(c1y)
+            bit = NumericUpDown1.Value
+            xxx = xxx - bit + gap
+            group.MoveToTarget(xxx, yyy, 0, 0, 0, 0)
+
+            c1x = group.MaxX
+            c1y = group.MaxY
+
+
+            iii = iii + 1
+        End While
+
+
+
+
+    End Sub
 End Class

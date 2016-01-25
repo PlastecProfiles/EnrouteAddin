@@ -32,8 +32,15 @@ Partial Class Form1
         Me.Nest_ = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Test = New System.Windows.Forms.Button()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.Circle = New System.Windows.Forms.Button()
+        Me.Circle_move_to = New System.Windows.Forms.Button()
+        Me.Circle_move = New System.Windows.Forms.Button()
+        Me.Gapat = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Gapsize = New System.Windows.Forms.NumericUpDown()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Gapsize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Move_to
@@ -65,17 +72,17 @@ Partial Class Form1
         '
         'NumericUpDown1
         '
-        Me.NumericUpDown1.BackColor = System.Drawing.SystemColors.Control
+        Me.NumericUpDown1.BackColor = System.Drawing.SystemColors.Window
         Me.NumericUpDown1.DecimalPlaces = 4
         Me.NumericUpDown1.Increment = New Decimal(New Integer() {625, 0, 0, 262144})
-        Me.NumericUpDown1.Location = New System.Drawing.Point(255, 15)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(577, 12)
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(120, 20)
         Me.NumericUpDown1.TabIndex = 3
         '
         'Count
         '
-        Me.Count.Location = New System.Drawing.Point(12, 54)
+        Me.Count.Location = New System.Drawing.Point(12, 84)
         Me.Count.Name = "Count"
         Me.Count.Size = New System.Drawing.Size(75, 23)
         Me.Count.TabIndex = 4
@@ -84,7 +91,7 @@ Partial Class Form1
         '
         'Edit_Start
         '
-        Me.Edit_Start.Location = New System.Drawing.Point(12, 98)
+        Me.Edit_Start.Location = New System.Drawing.Point(12, 132)
         Me.Edit_Start.Name = "Edit_Start"
         Me.Edit_Start.Size = New System.Drawing.Size(75, 23)
         Me.Edit_Start.TabIndex = 5
@@ -93,7 +100,7 @@ Partial Class Form1
         '
         'Nest_
         '
-        Me.Nest_.Location = New System.Drawing.Point(12, 144)
+        Me.Nest_.Location = New System.Drawing.Point(12, 354)
         Me.Nest_.Name = "Nest_"
         Me.Nest_.Size = New System.Drawing.Size(75, 23)
         Me.Nest_.TabIndex = 6
@@ -118,19 +125,81 @@ Partial Class Form1
         Me.Test.Text = "test"
         Me.Test.UseVisualStyleBackColor = True
         '
-        'ProgressBar1
+        'Circle
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(597, 522)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(100, 23)
-        Me.ProgressBar1.TabIndex = 11
+        Me.Circle.Location = New System.Drawing.Point(12, 178)
+        Me.Circle.Name = "Circle"
+        Me.Circle.Size = New System.Drawing.Size(75, 23)
+        Me.Circle.TabIndex = 11
+        Me.Circle.Text = "Circle"
+        Me.Circle.UseVisualStyleBackColor = True
+        '
+        'Circle_move_to
+        '
+        Me.Circle_move_to.Location = New System.Drawing.Point(12, 41)
+        Me.Circle_move_to.Name = "Circle_move_to"
+        Me.Circle_move_to.Size = New System.Drawing.Size(102, 23)
+        Me.Circle_move_to.TabIndex = 12
+        Me.Circle_move_to.Text = "Circle move to"
+        Me.Circle_move_to.UseVisualStyleBackColor = True
+        '
+        'Circle_move
+        '
+        Me.Circle_move.Location = New System.Drawing.Point(120, 41)
+        Me.Circle_move.Name = "Circle_move"
+        Me.Circle_move.Size = New System.Drawing.Size(75, 23)
+        Me.Circle_move.TabIndex = 13
+        Me.Circle_move.Text = "Circle move"
+        Me.Circle_move.UseVisualStyleBackColor = True
+        '
+        'Gapat
+        '
+        Me.Gapat.Location = New System.Drawing.Point(381, 9)
+        Me.Gapat.Name = "Gapat"
+        Me.Gapat.Size = New System.Drawing.Size(75, 23)
+        Me.Gapat.TabIndex = 14
+        Me.Gapat.Text = "Gap at"
+        Me.Gapat.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(532, 14)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.TabIndex = 15
+        Me.Label2.Text = "bit size"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(532, 51)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(48, 13)
+        Me.Label3.TabIndex = 16
+        Me.Label3.Text = "Gap size"
+        '
+        'Gapsize
+        '
+        Me.Gapsize.DecimalPlaces = 4
+        Me.Gapsize.Increment = New Decimal(New Integer() {1, 0, 0, 262144})
+        Me.Gapsize.Location = New System.Drawing.Point(586, 49)
+        Me.Gapsize.Name = "Gapsize"
+        Me.Gapsize.Size = New System.Drawing.Size(120, 20)
+        Me.Gapsize.TabIndex = 17
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(709, 554)
-        Me.Controls.Add(Me.ProgressBar1)
+        Me.Controls.Add(Me.Gapsize)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Gapat)
+        Me.Controls.Add(Me.Circle_move)
+        Me.Controls.Add(Me.Circle_move_to)
+        Me.Controls.Add(Me.Circle)
         Me.Controls.Add(Me.Test)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Nest_)
@@ -145,6 +214,7 @@ Partial Class Form1
         Me.Text = "PlastecAddins"
         Me.TransparencyKey = System.Drawing.Color.Transparent
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Gapsize, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -159,5 +229,11 @@ Partial Class Form1
     Friend WithEvents Nest_ As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Test As Button
-    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents Circle As Button
+    Friend WithEvents Circle_move_to As Button
+    Friend WithEvents Circle_move As Button
+    Friend WithEvents Gapat As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Gapsize As NumericUpDown
 End Class
