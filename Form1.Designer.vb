@@ -29,7 +29,6 @@ Partial Class Form1
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Count = New System.Windows.Forms.Button()
         Me.Edit_Start = New System.Windows.Forms.Button()
-        Me.Nest_ = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Test = New System.Windows.Forms.Button()
         Me.Circle = New System.Windows.Forms.Button()
@@ -39,6 +38,7 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Gapsize = New System.Windows.Forms.NumericUpDown()
+        Me.selection = New System.Windows.Forms.Button()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Gapsize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -75,14 +75,14 @@ Partial Class Form1
         Me.NumericUpDown1.BackColor = System.Drawing.SystemColors.Window
         Me.NumericUpDown1.DecimalPlaces = 4
         Me.NumericUpDown1.Increment = New Decimal(New Integer() {625, 0, 0, 262144})
-        Me.NumericUpDown1.Location = New System.Drawing.Point(577, 12)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(325, 15)
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(120, 20)
         Me.NumericUpDown1.TabIndex = 3
         '
         'Count
         '
-        Me.Count.Location = New System.Drawing.Point(12, 84)
+        Me.Count.Location = New System.Drawing.Point(12, 159)
         Me.Count.Name = "Count"
         Me.Count.Size = New System.Drawing.Size(75, 23)
         Me.Count.TabIndex = 4
@@ -91,21 +91,12 @@ Partial Class Form1
         '
         'Edit_Start
         '
-        Me.Edit_Start.Location = New System.Drawing.Point(12, 132)
+        Me.Edit_Start.Location = New System.Drawing.Point(12, 188)
         Me.Edit_Start.Name = "Edit_Start"
         Me.Edit_Start.Size = New System.Drawing.Size(75, 23)
         Me.Edit_Start.TabIndex = 5
         Me.Edit_Start.Text = "Edit Start"
         Me.Edit_Start.UseVisualStyleBackColor = True
-        '
-        'Nest_
-        '
-        Me.Nest_.Location = New System.Drawing.Point(12, 354)
-        Me.Nest_.Name = "Nest_"
-        Me.Nest_.Size = New System.Drawing.Size(75, 23)
-        Me.Nest_.TabIndex = 6
-        Me.Nest_.Text = "Nest"
-        Me.Nest_.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -118,7 +109,7 @@ Partial Class Form1
         '
         'Test
         '
-        Me.Test.Location = New System.Drawing.Point(12, 404)
+        Me.Test.Location = New System.Drawing.Point(12, 485)
         Me.Test.Name = "Test"
         Me.Test.Size = New System.Drawing.Size(78, 32)
         Me.Test.TabIndex = 10
@@ -127,7 +118,7 @@ Partial Class Form1
         '
         'Circle
         '
-        Me.Circle.Location = New System.Drawing.Point(12, 178)
+        Me.Circle.Location = New System.Drawing.Point(12, 217)
         Me.Circle.Name = "Circle"
         Me.Circle.Size = New System.Drawing.Size(75, 23)
         Me.Circle.TabIndex = 11
@@ -154,7 +145,7 @@ Partial Class Form1
         '
         'Gapat
         '
-        Me.Gapat.Location = New System.Drawing.Point(381, 9)
+        Me.Gapat.Location = New System.Drawing.Point(451, 26)
         Me.Gapat.Name = "Gapat"
         Me.Gapat.Size = New System.Drawing.Size(75, 23)
         Me.Gapat.TabIndex = 14
@@ -164,7 +155,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(532, 14)
+        Me.Label2.Location = New System.Drawing.Point(280, 17)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(39, 13)
         Me.Label2.TabIndex = 15
@@ -173,7 +164,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(532, 51)
+        Me.Label3.Location = New System.Drawing.Point(271, 46)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(48, 13)
         Me.Label3.TabIndex = 16
@@ -183,16 +174,26 @@ Partial Class Form1
         '
         Me.Gapsize.DecimalPlaces = 4
         Me.Gapsize.Increment = New Decimal(New Integer() {1, 0, 0, 262144})
-        Me.Gapsize.Location = New System.Drawing.Point(586, 49)
+        Me.Gapsize.Location = New System.Drawing.Point(325, 44)
         Me.Gapsize.Name = "Gapsize"
         Me.Gapsize.Size = New System.Drawing.Size(120, 20)
         Me.Gapsize.TabIndex = 17
+        '
+        'selection
+        '
+        Me.selection.Location = New System.Drawing.Point(12, 246)
+        Me.selection.Name = "selection"
+        Me.selection.Size = New System.Drawing.Size(75, 23)
+        Me.selection.TabIndex = 18
+        Me.selection.Text = "Select"
+        Me.selection.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(709, 554)
+        Me.Controls.Add(Me.selection)
         Me.Controls.Add(Me.Gapsize)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -202,7 +203,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Circle)
         Me.Controls.Add(Me.Test)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Nest_)
         Me.Controls.Add(Me.Edit_Start)
         Me.Controls.Add(Me.Count)
         Me.Controls.Add(Me.NumericUpDown1)
@@ -226,7 +226,6 @@ Partial Class Form1
     Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents Count As Button
     Friend WithEvents Edit_Start As Button
-    Friend WithEvents Nest_ As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Test As Button
     Friend WithEvents Circle As Button
@@ -236,4 +235,5 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Gapsize As NumericUpDown
+    Friend WithEvents selection As Button
 End Class

@@ -208,50 +208,6 @@
 
 
 
-    Private Sub Nest__Click_1(sender As Object, e As EventArgs) Handles Nest_.Click
-
-        Enr = New EnRoute3.EnrouteApp
-        doc = Enr.ActiveDrawing
-        totalArea = 0.0
-
-        If doc Is Nothing Then
-            MsgBox("No Active File")
-            End
-        End If
-        layer = doc.ActiveLayer
-        selec = doc.Selection
-
-        If selec.Count = 0 Then
-            MsgBox("Select an object")
-        End If
-        b1x = 0
-        b1y = 0
-        c1x = selec.MaxX - selec.MinX
-        c1y = selec.MaxY - selec.MinY
-        c2x = 0
-        c2y = 0
-        Dim a2 = 0
-        Dim a1 = c1x * c1y
-
-        If a1 > a2 Then
-            selec.RotateXY(1, c1x / 2, c1y / 2)
-            c2x = selec.MaxX - selec.MinX
-            c2y = selec.MaxY - selec.MinY
-            selec.MoveToTarget(b1x, b1y, 0, 0, 0, 0)
-            a2 = c2x * c2y
-        End If
-        If a2 > a1 Then
-            selec.RotateXY(-1, c1x / 2, c1y / 2)
-            selec.MoveToTarget(b1x, b1y, 0, 0, 0, 0)
-        End If
-        c1x = selec.MaxX - selec.MinX
-        c1y = selec.MaxY - selec.MinY
-        selec.SelectNone()
-        MsgBox("select another item")
-
-
-    End Sub
-
 
 
     Private Sub Test_Click(sender As Object, e As EventArgs) Handles Test.Click
@@ -271,25 +227,11 @@
             MsgBox("Select an object")
         End If
 
-        Dim iii = 1
+        Dim iii = 0
         ID = selec.Members.Item(iii).MemberHandle
-
-
-
-
-
-        'group = layer.CreateGroup
-        'contour = group.CreateContour
-        'seg = contour.Segments
-        'selec.Copy()
-
-
-
-
-        'seg = contour.Segments
-        ' segment = contour.Segments
-        ' Dim yyy = arc.CenterX
-
+        group = doc.FindGroup(ID)
+        MsgBox(group.MaxX)
+        MsgBox(group.MaxY)
 
     End Sub
 
@@ -337,12 +279,22 @@
         If selec.Count = 0 Then
             MsgBox("Select an object")
         End If
+
         c1x = 0
         c1y = 0
         bit = NumericUpDown1.Value
+        ID = selec.Members.Item(0).MemberHandle
+        group = doc.FindGroup(ID)
+        Dim minx = group.MinX
+        Dim maxx = group.MaxX
+        Dim miny = group.MinY
+        Dim maxy = group.MaxY
         Dim gap = gapsize.Value
-        
+
+
         Dim iii = 1
+
+
 
         Dim yyy = 0
 
@@ -350,23 +302,49 @@
         While iii < selec.Count
             ID = selec.Members.Item(iii).MemberHandle
             group = doc.FindGroup(ID)
-            c1x = group.MaxX
-            c1y = group.MaxY
-            xxx = CDec(c1x)
-            yyy = CDec(c1y)
+            Dim xxx2 = group.MinX
+            Dim yyy2 = group.MinY
+
+            If yyy2 > yyy Then
+                yyy = yyy2 + bit - gap
+                xxx = minx
+            Else
+
+                yyy = miny
+            End If
+
+            If xxx2 > xxx Then
+                xxx = xxx2 + bit - gap
+                yyy = miny
+            Else
+                xxx = minx
+
+            End If
+
+
+
+
             bit = NumericUpDown1.Value
             xxx = xxx - bit + gap
+            yyy = yyy - bit + gap
             group.MoveToTarget(xxx, yyy, 0, 0, 0, 0)
 
-            c1x = group.MaxX
-            c1y = group.MaxY
+                xxx = group.MaxX
+                yyy = group.MaxY
 
-
+            maxx = group.MaxX
+            minx = group.MinX
+            maxy = group.MaxY
+            miny = group.MinY
             iii = iii + 1
         End While
 
 
 
+
+    End Sub
+
+    Private Sub selection_Click(sender As Object, e As EventArgs) Handles selection.Click
 
     End Sub
 End Class
