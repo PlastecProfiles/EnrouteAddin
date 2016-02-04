@@ -5,6 +5,6 @@ Please watch and fork and create pull request as much as you like.
 If anyone has any question about how this code please open an issue and ask!
 To get the latest stable version please see our website.
 To do:
-1. experiment with nesting.
-2. check for updates.
-
+1. Experiment with nesting.
+2. I am working on trying to get it to select only   a specific dia hole 
+3 Possibly make it so that a person can record a "macro" if nessecary it could simply provide code that could be put in to visual studio.
