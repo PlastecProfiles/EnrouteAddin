@@ -345,6 +345,35 @@
     End Sub
 
     Private Sub selection_Click(sender As Object, e As EventArgs) Handles selection.Click
+        Enr = New EnRoute3.EnrouteApp
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
+
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+
+        If selec.Count = 0 Then
+            MsgBox("Select an object")
+        End If
+        Dim aaa = 0
+        Dim selection = 0
+        Dim bbb = NumericUpDown2.Value
+        While aaa < selec.Count
+            ID = selec.Members.Item(aaa).MemberHandle
+            group = doc.FindGroup(ID)
+            Dim group2 = 0
+            Dim size = group.MaxX - group.MinX
+            If size = bbb Then
+                group2 = group.Select + group2
+
+            End If
+        End While
+
+
 
     End Sub
 End Class

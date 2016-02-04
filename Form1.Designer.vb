@@ -39,8 +39,10 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Gapsize = New System.Windows.Forms.NumericUpDown()
         Me.selection = New System.Windows.Forms.Button()
+        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Gapsize, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Move_to
@@ -188,11 +190,19 @@ Partial Class Form1
         Me.selection.Text = "Select"
         Me.selection.UseVisualStyleBackColor = True
         '
+        'NumericUpDown2
+        '
+        Me.NumericUpDown2.Location = New System.Drawing.Point(93, 246)
+        Me.NumericUpDown2.Name = "NumericUpDown2"
+        Me.NumericUpDown2.Size = New System.Drawing.Size(120, 20)
+        Me.NumericUpDown2.TabIndex = 19
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(709, 554)
+        Me.Controls.Add(Me.NumericUpDown2)
         Me.Controls.Add(Me.selection)
         Me.Controls.Add(Me.Gapsize)
         Me.Controls.Add(Me.Label3)
@@ -215,6 +225,7 @@ Partial Class Form1
         Me.TransparencyKey = System.Drawing.Color.Transparent
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Gapsize, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -236,4 +247,5 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents Gapsize As NumericUpDown
     Friend WithEvents selection As Button
+    Friend WithEvents NumericUpDown2 As NumericUpDown
 End Class
