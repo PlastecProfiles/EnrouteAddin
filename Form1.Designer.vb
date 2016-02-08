@@ -31,7 +31,6 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Test = New System.Windows.Forms.Button()
         Me.Circle = New System.Windows.Forms.Button()
-        Me.Circle_move_to = New System.Windows.Forms.Button()
         Me.Circle_move = New System.Windows.Forms.Button()
         Me.Gapat = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -39,15 +38,15 @@ Partial Class Form1
         Me.selection = New System.Windows.Forms.Button()
         Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Move_to = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Gapsize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,18 +129,9 @@ Partial Class Form1
         Me.Circle.Text = "Circle"
         Me.Circle.UseVisualStyleBackColor = True
         '
-        'Circle_move_to
-        '
-        Me.Circle_move_to.Location = New System.Drawing.Point(89, 201)
-        Me.Circle_move_to.Name = "Circle_move_to"
-        Me.Circle_move_to.Size = New System.Drawing.Size(80, 23)
-        Me.Circle_move_to.TabIndex = 12
-        Me.Circle_move_to.Text = "Circle mo to"
-        Me.Circle_move_to.UseVisualStyleBackColor = True
-        '
         'Circle_move
         '
-        Me.Circle_move.Location = New System.Drawing.Point(175, 201)
+        Me.Circle_move.Location = New System.Drawing.Point(89, 201)
         Me.Circle_move.Name = "Circle_move"
         Me.Circle_move.Size = New System.Drawing.Size(75, 23)
         Me.Circle_move.TabIndex = 13
@@ -219,14 +209,13 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.NumericUpDown2, 2, 8)
         Me.TableLayoutPanel1.Controls.Add(Me.Gapat, 1, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.Gapsize, 2, 7)
-        Me.TableLayoutPanel1.Controls.Add(Me.Circle_move_to, 1, 6)
-        Me.TableLayoutPanel1.Controls.Add(Me.Circle_move, 2, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.Label5, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.Label6, 0, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.Label7, 0, 6)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 5)
         Me.TableLayoutPanel1.Controls.Add(Me.Label9, 0, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.Label10, 0, 8)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.Circle_move, 1, 6)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(27, 36)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 10
@@ -242,6 +231,16 @@ Partial Class Form1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(518, 336)
         Me.TableLayoutPanel1.TabIndex = 20
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(25, 43)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(35, 13)
+        Me.Label3.TabIndex = 20
+        Me.Label3.Text = "Count"
         '
         'Label4
         '
@@ -262,16 +261,6 @@ Partial Class Form1
         Me.Move_to.TabIndex = 0
         Me.Move_to.Text = "Move to"
         Me.Move_to.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(25, 43)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(35, 13)
-        Me.Label3.TabIndex = 20
-        Me.Label3.Text = "Count"
         '
         'Label5
         '
@@ -303,16 +292,6 @@ Partial Class Form1
         Me.Label7.TabIndex = 23
         Me.Label7.Text = "Circle move"
         '
-        'Label8
-        '
-        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(9, 175)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(67, 13)
-        Me.Label8.TabIndex = 24
-        Me.Label8.Text = "Experimental"
-        '
         'Label9
         '
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -332,6 +311,16 @@ Partial Class Form1
         Me.Label10.Size = New System.Drawing.Size(37, 13)
         Me.Label10.TabIndex = 26
         Me.Label10.Text = "Select"
+        '
+        'Label8
+        '
+        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(9, 175)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(67, 13)
+        Me.Label8.TabIndex = 24
+        Me.Label8.Text = "Experimental"
         '
         'Form1
         '
@@ -361,7 +350,6 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Test As Button
     Friend WithEvents Circle As Button
-    Friend WithEvents Circle_move_to As Button
     Friend WithEvents Circle_move As Button
     Friend WithEvents Gapat As Button
     Friend WithEvents Label2 As Label
