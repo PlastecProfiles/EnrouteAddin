@@ -116,7 +116,7 @@
     End Sub
 
 
-    Private Sub Circle_move_Click(sender As Object, e As EventArgs)
+    Private Sub Circle_move_Click(sender As Object, e As EventArgs) Handles Circle_move.Click
         Enr = New EnRoute3.EnrouteApp
         doc = Enr.ActiveDrawing
         totalArea = 0.0
@@ -131,21 +131,20 @@
         If selec.Count = 0 Then
             MsgBox("Select an object")
         End If
+
         bit = NumericUpDown1.Value
         Dim ddd = selec.MaxX - selec.MinX
         dia = ddd - bit
-        contour = group.CreateContour
+        ' Dim bit2 = bit / 2
         selec.Copy()
-        contour.LineTo(selec.MaxY + 0.0001, 0, 0)
-        ID = selec.Members.Item(1).MemberHandle
-        group = doc.FindGroup(ID)
-        group.RotateXY(30, 0, 0)
-        w1 = group.MaxX
-        w2 = group.MaxY
+        contour = group.CreateRect(selec.MinX, selec.MinY, 0, selec.MinX, selec.MaxY - bit + 0.0001, 0)
+
+        contour.RotateXY(-60, selec.MinX, selec.MinY)
+        w1 = contour.MaxX
+        w2 = contour.MaxY
         selec.Paste()
-        ID = selec.Members.Item(2).MemberHandle
-        group = doc.FindGroup(ID)
-        group.MoveToTarget(w1, w2, 0, 0, 0, 0)
+
+        selec.MoveToTarget(w1, w2, 0, 0, 0, 0)
 
     End Sub
 
@@ -364,4 +363,5 @@
 
 
     End Sub
+
 End Class

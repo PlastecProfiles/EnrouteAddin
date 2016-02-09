@@ -131,7 +131,7 @@ Partial Class Form1
         '
         'Circle_move
         '
-        Me.Circle_move.Location = New System.Drawing.Point(89, 201)
+        Me.Circle_move.Location = New System.Drawing.Point(89, 135)
         Me.Circle_move.Name = "Circle_move"
         Me.Circle_move.Size = New System.Drawing.Size(75, 23)
         Me.Circle_move.TabIndex = 13
@@ -211,11 +211,11 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.Gapsize, 2, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.Label5, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.Label6, 0, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label7, 0, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.Label9, 0, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.Label10, 0, 8)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 5)
-        Me.TableLayoutPanel1.Controls.Add(Me.Circle_move, 1, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label7, 0, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.Circle_move, 1, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 6)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(27, 36)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 10
@@ -286,7 +286,7 @@ Partial Class Form1
         '
         Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(12, 208)
+        Me.Label7.Location = New System.Drawing.Point(12, 142)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(62, 13)
         Me.Label7.TabIndex = 23
@@ -316,7 +316,7 @@ Partial Class Form1
         '
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(9, 175)
+        Me.Label8.Location = New System.Drawing.Point(9, 208)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(67, 13)
         Me.Label8.TabIndex = 24
