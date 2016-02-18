@@ -41,79 +41,7 @@
     Dim bit As Decimal
     Dim bit2 As Decimal
     Dim bit3 As Decimal
-    Private Sub Move_to_Click(sender As Object, e As EventArgs) Handles Move_to.Click
 
-        Enr = New EnRoute3.EnrouteApp
-        doc = Enr.ActiveDrawing
-        totalArea = 0.0
-
-        If doc Is Nothing Then
-            MsgBox("No Active File")
-            End
-        End If
-        layer = doc.ActiveLayer
-        selec = doc.Selection
-
-        If selec.Count = 0 Then
-            MsgBox("Select an object")
-        End If
-        c1x = selec.MaxX
-        c1y = selec.MaxY
-        bit = NumericUpDown1.Value
-
-
-    End Sub
-
-    Private Sub Move_x_Click(sender As Object, e As EventArgs) Handles Move_x.Click
-
-        Enr = New EnRoute3.EnrouteApp
-        doc = Enr.ActiveDrawing
-        totalArea = 0.0
-
-        If doc Is Nothing Then
-            MsgBox("No Active File")
-            End
-        End If
-        layer = doc.ActiveLayer
-        selec = doc.Selection
-
-        If selec.Count = 0 Then
-            MsgBox("Select an object")
-        End If
-        Dim xxx = CDec(c1x)
-
-        Dim c2y = selec.MinY
-        xxx = xxx - bit + 0.0001
-        selec.MoveToTarget(xxx, c2y, 0, 0, 0, 0)
-        c1x = selec.MaxX
-        c1y = selec.MaxY
-        bit = NumericUpDown1.Value
-    End Sub
-
-    Private Sub Move_y_Click(sender As Object, e As EventArgs) Handles Move_y.Click
-
-        Enr = New EnRoute3.EnrouteApp
-        doc = Enr.ActiveDrawing
-        totalArea = 0.0
-
-        If doc Is Nothing Then
-            MsgBox("No Active File")
-            End
-        End If
-        layer = doc.ActiveLayer
-        selec = doc.Selection
-
-        If selec.Count = 0 Then
-            MsgBox("Select an object")
-        End If
-        Dim yyy = CDec(c1y)
-        Dim c2x = selec.MinX
-        yyy = yyy - bit + 0.0001
-        selec.MoveToTarget(c2x, yyy, 0, 0, 0, 0)
-        c1x = selec.MaxX
-        c1y = selec.MaxY
-        bit = NumericUpDown1.Value
-    End Sub
 
 
     Private Sub Circle_move_Click(sender As Object, e As EventArgs) Handles Circle_move.Click
@@ -380,12 +308,13 @@
             MsgBox("Select an object")
         End If
         Dim iterate1 = 0
-        Dim xxx = 0
+        Dim xxx = selec.MinX + NumericUpDown1.Value - 0.0001
         While iterate1 < selec.Count
             ID = selec.Members.Item(iterate1).MemberHandle
             group = doc.FindGroup(ID)
-            group.MoveToTarget(xxx, group.MinY, 0, 0, 0, 0)
+            group.MoveToTarget(xxx - NumericUpDown1.Value + 0.0001, selec.MinY, 0, 0, 0, 0)
             xxx = group.MaxX
+            iterate1 = iterate1 + 1
         End While
 
     End Sub
@@ -406,12 +335,13 @@
             MsgBox("Select an object")
         End If
         Dim iterate2 = 0
-        Dim yyy = 0
+        Dim yyy = selec.MinY + NumericUpDown1.Value - 0.0001
         While iterate2 < selec.Count
             ID = selec.Members.Item(iterate2).MemberHandle
             group = doc.FindGroup(ID)
-            group.MoveToTarget(group.MinX, yyy, 0, 0, 0, 0)
+            group.MoveToTarget(selec.MinX, yyy - NumericUpDown1.Value + 0.0001, 0, 0, 0, 0)
             yyy = group.MaxY
+            iterate2 = iterate2 + 1
         End While
     End Sub
 End Class

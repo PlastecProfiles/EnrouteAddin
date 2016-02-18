@@ -23,8 +23,6 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.Move_x = New System.Windows.Forms.Button()
-        Me.Move_y = New System.Windows.Forms.Button()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Count = New System.Windows.Forms.Button()
         Me.Edit_Start = New System.Windows.Forms.Button()
@@ -39,7 +37,6 @@ Partial Class Form1
         Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Move_to = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -47,7 +44,6 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.moveallx = New System.Windows.Forms.Button()
         Me.moveally = New System.Windows.Forms.Button()
         Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown()
@@ -57,26 +53,6 @@ Partial Class Form1
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Move_x
-        '
-        Me.Move_x.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Move_x.Location = New System.Drawing.Point(175, 8)
-        Me.Move_x.Name = "Move_x"
-        Me.Move_x.Size = New System.Drawing.Size(75, 23)
-        Me.Move_x.TabIndex = 1
-        Me.Move_x.Text = "Move x"
-        Me.Move_x.UseVisualStyleBackColor = True
-        '
-        'Move_y
-        '
-        Me.Move_y.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Move_y.Location = New System.Drawing.Point(261, 8)
-        Me.Move_y.Name = "Move_y"
-        Me.Move_y.Size = New System.Drawing.Size(75, 23)
-        Me.Move_y.TabIndex = 2
-        Me.Move_y.Text = "Move y"
-        Me.Move_y.UseVisualStyleBackColor = True
         '
         'NumericUpDown1
         '
@@ -198,9 +174,6 @@ Partial Class Form1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Move_to, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Move_y, 3, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Move_x, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.selection, 1, 8)
         Me.TableLayoutPanel1.Controls.Add(Me.NumericUpDown2, 2, 8)
         Me.TableLayoutPanel1.Controls.Add(Me.Gapat, 1, 7)
@@ -217,10 +190,9 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.Circle_move, 1, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.Test, 1, 10)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label11, 0, 9)
-        Me.TableLayoutPanel1.Controls.Add(Me.moveallx, 1, 9)
-        Me.TableLayoutPanel1.Controls.Add(Me.moveally, 2, 9)
         Me.TableLayoutPanel1.Controls.Add(Me.NumericUpDown3, 3, 8)
+        Me.TableLayoutPanel1.Controls.Add(Me.moveallx, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.moveally, 2, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(39, 70)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 11
@@ -247,16 +219,6 @@ Partial Class Form1
         Me.Label4.Size = New System.Drawing.Size(34, 13)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Move"
-        '
-        'Move_to
-        '
-        Me.Move_to.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Move_to.Location = New System.Drawing.Point(89, 8)
-        Me.Move_to.Name = "Move_to"
-        Me.Move_to.Size = New System.Drawing.Size(75, 23)
-        Me.Move_to.TabIndex = 0
-        Me.Move_to.Text = "Move to"
-        Me.Move_to.UseVisualStyleBackColor = True
         '
         'Label9
         '
@@ -328,19 +290,9 @@ Partial Class Form1
         Me.Label8.TabIndex = 24
         Me.Label8.Text = "Experimental"
         '
-        'Label11
-        '
-        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(26, 373)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(34, 13)
-        Me.Label11.TabIndex = 27
-        Me.Label11.Text = "Move"
-        '
         'moveallx
         '
-        Me.moveallx.Location = New System.Drawing.Point(89, 363)
+        Me.moveallx.Location = New System.Drawing.Point(89, 3)
         Me.moveallx.Name = "moveallx"
         Me.moveallx.Size = New System.Drawing.Size(75, 23)
         Me.moveallx.TabIndex = 28
@@ -349,7 +301,7 @@ Partial Class Form1
         '
         'moveally
         '
-        Me.moveally.Location = New System.Drawing.Point(175, 363)
+        Me.moveally.Location = New System.Drawing.Point(175, 3)
         Me.moveally.Name = "moveally"
         Me.moveally.Size = New System.Drawing.Size(75, 23)
         Me.moveally.TabIndex = 29
@@ -386,8 +338,6 @@ Partial Class Form1
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Move_x As Button
-    Friend WithEvents Move_y As Button
     Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents Count As Button
     Friend WithEvents Edit_Start As Button
@@ -402,7 +352,6 @@ Partial Class Form1
     Friend WithEvents NumericUpDown2 As NumericUpDown
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Label4 As Label
-    Friend WithEvents Move_to As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
@@ -410,7 +359,6 @@ Partial Class Form1
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label11 As Label
     Friend WithEvents moveallx As Button
     Friend WithEvents moveally As Button
     Friend WithEvents NumericUpDown3 As NumericUpDown
