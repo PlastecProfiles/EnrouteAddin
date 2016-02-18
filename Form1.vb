@@ -364,4 +364,54 @@
 
     End Sub
 
+    Private Sub moveallx_Click(sender As Object, e As EventArgs) Handles moveallx.Click
+        Enr = New EnRoute3.EnrouteApp()
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
+
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+
+        If selec.Count = 0 Then
+            MsgBox("Select an object")
+        End If
+        Dim iterate1 = 0
+        Dim xxx = 0
+        While iterate1 < selec.Count
+            ID = selec.Members.Item(iterate1).MemberHandle
+            group = doc.FindGroup(ID)
+            group.MoveToTarget(xxx, group.MinY, 0, 0, 0, 0)
+            xxx = group.MaxX
+        End While
+
+    End Sub
+
+    Private Sub moveally_Click(sender As Object, e As EventArgs) Handles moveally.Click
+        Enr = New EnRoute3.EnrouteApp()
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
+
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+
+        If selec.Count = 0 Then
+            MsgBox("Select an object")
+        End If
+        Dim iterate2 = 0
+        Dim yyy = 0
+        While iterate2 < selec.Count
+            ID = selec.Members.Item(iterate2).MemberHandle
+            group = doc.FindGroup(ID)
+            group.MoveToTarget(group.MinX, yyy, 0, 0, 0, 0)
+            yyy = group.MaxY
+        End While
+    End Sub
 End Class

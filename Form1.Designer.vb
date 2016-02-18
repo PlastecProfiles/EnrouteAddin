@@ -38,25 +38,30 @@ Partial Class Form1
         Me.selection = New System.Windows.Forms.Button()
         Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Move_to = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.moveallx = New System.Windows.Forms.Button()
+        Me.moveally = New System.Windows.Forms.Button()
+        Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Gapsize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
+        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Move_x
         '
         Me.Move_x.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Move_x.Location = New System.Drawing.Point(175, 5)
+        Me.Move_x.Location = New System.Drawing.Point(175, 8)
         Me.Move_x.Name = "Move_x"
         Me.Move_x.Size = New System.Drawing.Size(75, 23)
         Me.Move_x.TabIndex = 1
@@ -66,7 +71,7 @@ Partial Class Form1
         'Move_y
         '
         Me.Move_y.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Move_y.Location = New System.Drawing.Point(261, 5)
+        Me.Move_y.Location = New System.Drawing.Point(261, 8)
         Me.Move_y.Name = "Move_y"
         Me.Move_y.Size = New System.Drawing.Size(75, 23)
         Me.Move_y.TabIndex = 2
@@ -79,14 +84,14 @@ Partial Class Form1
         Me.NumericUpDown1.BackColor = System.Drawing.SystemColors.Window
         Me.NumericUpDown1.DecimalPlaces = 4
         Me.NumericUpDown1.Increment = New Decimal(New Integer() {625, 0, 0, 262144})
-        Me.NumericUpDown1.Location = New System.Drawing.Point(433, 6)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(81, 7)
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(82, 20)
         Me.NumericUpDown1.TabIndex = 3
         '
         'Count
         '
-        Me.Count.Location = New System.Drawing.Point(89, 36)
+        Me.Count.Location = New System.Drawing.Point(89, 83)
         Me.Count.Name = "Count"
         Me.Count.Size = New System.Drawing.Size(75, 23)
         Me.Count.TabIndex = 4
@@ -95,7 +100,7 @@ Partial Class Form1
         '
         'Edit_Start
         '
-        Me.Edit_Start.Location = New System.Drawing.Point(89, 69)
+        Me.Edit_Start.Location = New System.Drawing.Point(89, 123)
         Me.Edit_Start.Name = "Edit_Start"
         Me.Edit_Start.Size = New System.Drawing.Size(75, 23)
         Me.Edit_Start.TabIndex = 5
@@ -113,7 +118,7 @@ Partial Class Form1
         '
         'Test
         '
-        Me.Test.Location = New System.Drawing.Point(89, 300)
+        Me.Test.Location = New System.Drawing.Point(89, 403)
         Me.Test.Name = "Test"
         Me.Test.Size = New System.Drawing.Size(78, 32)
         Me.Test.TabIndex = 10
@@ -122,7 +127,7 @@ Partial Class Form1
         '
         'Circle
         '
-        Me.Circle.Location = New System.Drawing.Point(89, 102)
+        Me.Circle.Location = New System.Drawing.Point(89, 163)
         Me.Circle.Name = "Circle"
         Me.Circle.Size = New System.Drawing.Size(75, 23)
         Me.Circle.TabIndex = 11
@@ -131,7 +136,7 @@ Partial Class Form1
         '
         'Circle_move
         '
-        Me.Circle_move.Location = New System.Drawing.Point(89, 135)
+        Me.Circle_move.Location = New System.Drawing.Point(89, 43)
         Me.Circle_move.Name = "Circle_move"
         Me.Circle_move.Size = New System.Drawing.Size(75, 23)
         Me.Circle_move.TabIndex = 13
@@ -140,7 +145,7 @@ Partial Class Form1
         '
         'Gapat
         '
-        Me.Gapat.Location = New System.Drawing.Point(89, 234)
+        Me.Gapat.Location = New System.Drawing.Point(89, 283)
         Me.Gapat.Name = "Gapat"
         Me.Gapat.Size = New System.Drawing.Size(75, 23)
         Me.Gapat.TabIndex = 14
@@ -151,7 +156,7 @@ Partial Class Form1
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(347, 10)
+        Me.Label2.Location = New System.Drawing.Point(36, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(39, 13)
         Me.Label2.TabIndex = 15
@@ -161,14 +166,14 @@ Partial Class Form1
         '
         Me.Gapsize.DecimalPlaces = 4
         Me.Gapsize.Increment = New Decimal(New Integer() {1, 0, 0, 262144})
-        Me.Gapsize.Location = New System.Drawing.Point(175, 234)
+        Me.Gapsize.Location = New System.Drawing.Point(175, 283)
         Me.Gapsize.Name = "Gapsize"
         Me.Gapsize.Size = New System.Drawing.Size(80, 20)
         Me.Gapsize.TabIndex = 17
         '
         'selection
         '
-        Me.selection.Location = New System.Drawing.Point(89, 267)
+        Me.selection.Location = New System.Drawing.Point(89, 323)
         Me.selection.Name = "selection"
         Me.selection.Size = New System.Drawing.Size(75, 23)
         Me.selection.TabIndex = 18
@@ -177,16 +182,14 @@ Partial Class Form1
         '
         'NumericUpDown2
         '
-        Me.NumericUpDown2.Location = New System.Drawing.Point(175, 267)
+        Me.NumericUpDown2.Location = New System.Drawing.Point(175, 323)
         Me.NumericUpDown2.Name = "NumericUpDown2"
         Me.NumericUpDown2.Size = New System.Drawing.Size(80, 20)
         Me.NumericUpDown2.TabIndex = 19
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TableLayoutPanel1.ColumnCount = 6
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
@@ -194,59 +197,52 @@ Partial Class Form1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Label3, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Move_to, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Move_y, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Move_x, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.NumericUpDown1, 5, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label2, 4, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Count, 1, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Test, 1, 9)
-        Me.TableLayoutPanel1.Controls.Add(Me.Circle, 1, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.Edit_Start, 1, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.selection, 1, 8)
         Me.TableLayoutPanel1.Controls.Add(Me.NumericUpDown2, 2, 8)
         Me.TableLayoutPanel1.Controls.Add(Me.Gapat, 1, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.Gapsize, 2, 7)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label5, 0, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label6, 0, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.Label9, 0, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.Label10, 0, 8)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label7, 0, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.Circle_move, 1, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label6, 0, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.Circle, 1, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label5, 0, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.Edit_Start, 1, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label3, 0, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.Count, 1, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label7, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Circle_move, 1, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 6)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(27, 36)
+        Me.TableLayoutPanel1.Controls.Add(Me.Test, 1, 10)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label11, 0, 9)
+        Me.TableLayoutPanel1.Controls.Add(Me.moveallx, 1, 9)
+        Me.TableLayoutPanel1.Controls.Add(Me.moveally, 2, 9)
+        Me.TableLayoutPanel1.Controls.Add(Me.NumericUpDown3, 3, 8)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(39, 70)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 10
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(518, 336)
+        Me.TableLayoutPanel1.RowCount = 11
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(518, 443)
         Me.TableLayoutPanel1.TabIndex = 20
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(25, 43)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(35, 13)
-        Me.Label3.TabIndex = 20
-        Me.Label3.Text = "Count"
         '
         'Label4
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(26, 10)
+        Me.Label4.Location = New System.Drawing.Point(26, 13)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(34, 13)
         Me.Label4.TabIndex = 0
@@ -255,48 +251,18 @@ Partial Class Form1
         'Move_to
         '
         Me.Move_to.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Move_to.Location = New System.Drawing.Point(89, 5)
+        Me.Move_to.Location = New System.Drawing.Point(89, 8)
         Me.Move_to.Name = "Move_to"
         Me.Move_to.Size = New System.Drawing.Size(75, 23)
         Me.Move_to.TabIndex = 0
         Me.Move_to.Text = "Move to"
         Me.Move_to.UseVisualStyleBackColor = True
         '
-        'Label5
-        '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(18, 76)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(50, 13)
-        Me.Label5.TabIndex = 21
-        Me.Label5.Text = "Edit Start"
-        '
-        'Label6
-        '
-        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(9, 109)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(67, 13)
-        Me.Label6.TabIndex = 22
-        Me.Label6.Text = "Create Circle"
-        '
-        'Label7
-        '
-        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(12, 142)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(62, 13)
-        Me.Label7.TabIndex = 23
-        Me.Label7.Text = "Circle move"
-        '
         'Label9
         '
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(29, 241)
+        Me.Label9.Location = New System.Drawing.Point(29, 293)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(27, 13)
         Me.Label9.TabIndex = 25
@@ -306,21 +272,96 @@ Partial Class Form1
         '
         Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(24, 274)
+        Me.Label10.Location = New System.Drawing.Point(24, 333)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(37, 13)
         Me.Label10.TabIndex = 26
         Me.Label10.Text = "Select"
         '
+        'Label6
+        '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(9, 173)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(67, 13)
+        Me.Label6.TabIndex = 22
+        Me.Label6.Text = "Create Circle"
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(18, 133)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(50, 13)
+        Me.Label5.TabIndex = 21
+        Me.Label5.Text = "Edit Start"
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(25, 93)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(35, 13)
+        Me.Label3.TabIndex = 20
+        Me.Label3.Text = "Count"
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(12, 53)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(62, 13)
+        Me.Label7.TabIndex = 23
+        Me.Label7.Text = "Circle move"
+        '
         'Label8
         '
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(9, 208)
+        Me.Label8.Location = New System.Drawing.Point(9, 253)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(67, 13)
         Me.Label8.TabIndex = 24
         Me.Label8.Text = "Experimental"
+        '
+        'Label11
+        '
+        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(26, 373)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(34, 13)
+        Me.Label11.TabIndex = 27
+        Me.Label11.Text = "Move"
+        '
+        'moveallx
+        '
+        Me.moveallx.Location = New System.Drawing.Point(89, 363)
+        Me.moveallx.Name = "moveallx"
+        Me.moveallx.Size = New System.Drawing.Size(75, 23)
+        Me.moveallx.TabIndex = 28
+        Me.moveallx.Text = "Move x"
+        Me.moveallx.UseVisualStyleBackColor = True
+        '
+        'moveally
+        '
+        Me.moveally.Location = New System.Drawing.Point(175, 363)
+        Me.moveally.Name = "moveally"
+        Me.moveally.Size = New System.Drawing.Size(75, 23)
+        Me.moveally.TabIndex = 29
+        Me.moveally.Text = "Move y"
+        Me.moveally.UseVisualStyleBackColor = True
+        '
+        'NumericUpDown3
+        '
+        Me.NumericUpDown3.Location = New System.Drawing.Point(261, 323)
+        Me.NumericUpDown3.Name = "NumericUpDown3"
+        Me.NumericUpDown3.Size = New System.Drawing.Size(80, 20)
+        Me.NumericUpDown3.TabIndex = 30
         '
         'Form1
         '
@@ -329,6 +370,8 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(709, 554)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.NumericUpDown1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.Text = "PlastecAddins"
@@ -338,6 +381,7 @@ Partial Class Form1
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -366,4 +410,8 @@ Partial Class Form1
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents moveallx As Button
+    Friend WithEvents moveally As Button
+    Friend WithEvents NumericUpDown3 As NumericUpDown
 End Class
