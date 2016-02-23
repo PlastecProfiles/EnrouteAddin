@@ -73,7 +73,7 @@
         selec.Paste()
 
         selec.MoveToTarget(w1, w2, 0, 0, 0, 0)
-
+        MsgBox("Done")
     End Sub
 
 
@@ -119,6 +119,8 @@
         End If
         selec.ScaleBy(1, 1, 1)
         doc.ReDraw()
+        MsgBox("Done")
+
     End Sub
 
 
@@ -147,6 +149,7 @@
         group = doc.FindGroup(ID)
         MsgBox(group.MaxX)
         MsgBox(group.MaxY)
+        MsgBox("Done")
 
     End Sub
 
@@ -177,87 +180,13 @@
 
         End If
         selec.DeleteMembers()
-    End Sub
-
-    Private Sub Gapat_Click(sender As Object, e As EventArgs) Handles Gapat.Click
-        Enr = New EnRoute3.EnrouteApp
-        doc = Enr.ActiveDrawing
-        totalArea = 0.0
-
-        If doc Is Nothing Then
-            MsgBox("No Active File")
-            End
-        End If
-        layer = doc.ActiveLayer
-        selec = doc.Selection
-
-        If selec.Count = 0 Then
-            MsgBox("Select an object")
-        End If
-
-        c1x = 0
-        c1y = 0
-        bit = NumericUpDown1.Value
-        ID = selec.Members.Item(0).MemberHandle
-        group = doc.FindGroup(ID)
-        Dim minx = group.MinX
-        Dim maxx = group.MaxX
-        Dim miny = group.MinY
-        Dim maxy = group.MaxY
-        Dim gap = gapsize.Value
-
-
-        Dim iii = 1
-
-
-
-        Dim yyy = 0
-
-        Dim xxx = 0
-        While iii < selec.Count
-            ID = selec.Members.Item(iii).MemberHandle
-            group = doc.FindGroup(ID)
-            Dim xxx2 = group.MinX
-            Dim yyy2 = group.MinY
-
-            If yyy2 > yyy Then
-                yyy = yyy2 + bit - gap
-                xxx = minx
-            Else
-
-                yyy = miny
-            End If
-
-            If xxx2 > xxx Then
-                xxx = xxx2 + bit - gap
-                yyy = miny
-            Else
-                xxx = minx
-
-            End If
-
-
-
-
-            bit = NumericUpDown1.Value
-            xxx = xxx - bit + gap
-            yyy = yyy - bit + gap
-            group.MoveToTarget(xxx, yyy, 0, 0, 0, 0)
-
-                xxx = group.MaxX
-                yyy = group.MaxY
-
-            maxx = group.MaxX
-            minx = group.MinX
-            maxy = group.MaxY
-            miny = group.MinY
-            iii = iii + 1
-        End While
-
-
-
+        MsgBox("Done")
 
     End Sub
+
+
+
+
 
     Private Sub selection_Click(sender As Object, e As EventArgs) Handles selection.Click
         Enr = New EnRoute3.EnrouteApp
@@ -274,6 +203,12 @@
         If selec.Count = 0 Then
             MsgBox("Select an object")
         End If
+        Dim stratiter = 0
+        While stratiter < Enr.Strategies.Count
+
+            ' ComboBox1.Items.Add()
+        End While
+
         Dim aaa = 0
         Dim selection = 0
         Dim bbb = NumericUpDown2.Value
@@ -283,10 +218,12 @@
             Dim group2 = 0
             Dim size = group.MaxX - group.MinX
             If size = bbb Then
-                group2 = group.Select + group2
+                group.Select()
+                '  selec.AddStrategy()
 
             End If
         End While
+        MsgBox("Done")
 
 
 
@@ -316,6 +253,7 @@
             xxx = group.MaxX
             iterate1 = iterate1 + 1
         End While
+        MsgBox("Done")
 
     End Sub
 
@@ -343,5 +281,7 @@
             yyy = group.MaxY
             iterate2 = iterate2 + 1
         End While
+        MsgBox("Done")
+
     End Sub
 End Class

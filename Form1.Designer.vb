@@ -30,14 +30,11 @@ Partial Class Form1
         Me.Test = New System.Windows.Forms.Button()
         Me.Circle = New System.Windows.Forms.Button()
         Me.Circle_move = New System.Windows.Forms.Button()
-        Me.Gapat = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Gapsize = New System.Windows.Forms.NumericUpDown()
         Me.selection = New System.Windows.Forms.Button()
         Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -47,8 +44,8 @@ Partial Class Form1
         Me.moveallx = New System.Windows.Forms.Button()
         Me.moveally = New System.Windows.Forms.Button()
         Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Gapsize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,15 +116,6 @@ Partial Class Form1
         Me.Circle_move.Text = "Circle move"
         Me.Circle_move.UseVisualStyleBackColor = True
         '
-        'Gapat
-        '
-        Me.Gapat.Location = New System.Drawing.Point(89, 283)
-        Me.Gapat.Name = "Gapat"
-        Me.Gapat.Size = New System.Drawing.Size(75, 23)
-        Me.Gapat.TabIndex = 14
-        Me.Gapat.Text = "Gap at"
-        Me.Gapat.UseVisualStyleBackColor = True
-        '
         'Label2
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -137,15 +125,6 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(39, 13)
         Me.Label2.TabIndex = 15
         Me.Label2.Text = "bit size"
-        '
-        'Gapsize
-        '
-        Me.Gapsize.DecimalPlaces = 4
-        Me.Gapsize.Increment = New Decimal(New Integer() {1, 0, 0, 262144})
-        Me.Gapsize.Location = New System.Drawing.Point(175, 283)
-        Me.Gapsize.Name = "Gapsize"
-        Me.Gapsize.Size = New System.Drawing.Size(80, 20)
-        Me.Gapsize.TabIndex = 17
         '
         'selection
         '
@@ -158,7 +137,7 @@ Partial Class Form1
         '
         'NumericUpDown2
         '
-        Me.NumericUpDown2.Location = New System.Drawing.Point(175, 323)
+        Me.NumericUpDown2.Location = New System.Drawing.Point(347, 323)
         Me.NumericUpDown2.Name = "NumericUpDown2"
         Me.NumericUpDown2.Size = New System.Drawing.Size(80, 20)
         Me.NumericUpDown2.TabIndex = 19
@@ -175,10 +154,6 @@ Partial Class Form1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.selection, 1, 8)
-        Me.TableLayoutPanel1.Controls.Add(Me.NumericUpDown2, 2, 8)
-        Me.TableLayoutPanel1.Controls.Add(Me.Gapat, 1, 7)
-        Me.TableLayoutPanel1.Controls.Add(Me.Gapsize, 2, 7)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label9, 0, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.Label10, 0, 8)
         Me.TableLayoutPanel1.Controls.Add(Me.Label6, 0, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.Circle, 1, 4)
@@ -190,9 +165,11 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.Circle_move, 1, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.Test, 1, 10)
-        Me.TableLayoutPanel1.Controls.Add(Me.NumericUpDown3, 3, 8)
         Me.TableLayoutPanel1.Controls.Add(Me.moveallx, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.moveally, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.NumericUpDown3, 5, 8)
+        Me.TableLayoutPanel1.Controls.Add(Me.NumericUpDown2, 4, 8)
+        Me.TableLayoutPanel1.Controls.Add(Me.ComboBox1, 2, 8)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(39, 70)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 11
@@ -219,16 +196,6 @@ Partial Class Form1
         Me.Label4.Size = New System.Drawing.Size(34, 13)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Move"
-        '
-        'Label9
-        '
-        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(29, 293)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(27, 13)
-        Me.Label9.TabIndex = 25
-        Me.Label9.Text = "Gap"
         '
         'Label10
         '
@@ -310,10 +277,18 @@ Partial Class Form1
         '
         'NumericUpDown3
         '
-        Me.NumericUpDown3.Location = New System.Drawing.Point(261, 323)
+        Me.NumericUpDown3.Location = New System.Drawing.Point(433, 323)
         Me.NumericUpDown3.Name = "NumericUpDown3"
         Me.NumericUpDown3.Size = New System.Drawing.Size(80, 20)
         Me.NumericUpDown3.TabIndex = 30
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(175, 323)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(80, 21)
+        Me.ComboBox1.TabIndex = 31
         '
         'Form1
         '
@@ -329,7 +304,6 @@ Partial Class Form1
         Me.Text = "PlastecAddins"
         Me.TransparencyKey = System.Drawing.Color.Transparent
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Gapsize, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
@@ -345,9 +319,7 @@ Partial Class Form1
     Friend WithEvents Test As Button
     Friend WithEvents Circle As Button
     Friend WithEvents Circle_move As Button
-    Friend WithEvents Gapat As Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents Gapsize As NumericUpDown
     Friend WithEvents selection As Button
     Friend WithEvents NumericUpDown2 As NumericUpDown
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
@@ -357,9 +329,9 @@ Partial Class Form1
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents moveallx As Button
     Friend WithEvents moveally As Button
     Friend WithEvents NumericUpDown3 As NumericUpDown
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
