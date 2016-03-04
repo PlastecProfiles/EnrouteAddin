@@ -42,7 +42,65 @@
     Dim bit2 As Decimal
     Dim bit3 As Decimal
 
+    'Sub Form1_Load() Handles MyBase.Load
+    '   Enr = New EnRoute3.EnrouteApp
+    ' doc = Enr.ActiveDrawing
+    '  totalArea = 0.0
 
+    'If doc Is Nothing Then
+    '       MsgBox("No Active File")
+    'End
+    'End If
+    '   layer = doc.ActiveLayer
+    '  selec = doc.Selection
+    ' group = layer.CreateGroup
+    'If selec.Count = 0 Then
+    '       MsgBox("Select an object")
+    'End If
+    'Dim stratiter = 0
+    'While stratiter < Enr.Strategies.Count
+
+    '       ComboBox1.Items.Add(Enr.Strategies.Item(stratiter).StrategyId & Enr.Strategies.Item(stratiter).Name)
+    'End While
+    'End Sub
+
+    Private Sub selection_Click(sender As Object, e As EventArgs) Handles selection.Click
+        Enr = New EnRoute3.EnrouteApp
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
+
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+
+        If selec.Count = 0 Then
+            MsgBox("Select an object")
+        End If
+
+
+
+        Dim aaa = 0
+        Dim selection = 0
+        Dim bbb = NumericUpDown2.Value
+        While aaa < selec.Count
+            ID = selec.Members.Item(aaa).MemberHandle
+            group = doc.FindGroup(ID)
+            Dim group2 As EnRoute3.EErrorCode
+            Dim size = group.MaxX - group.MinX
+            If size = bbb Then
+                group.Select()
+                'selec.AddStrategy(ComboBox1.SelectedItem(ID), ComboBox1.SelectedItem(Name))
+                group2 = selec.AddGroup(group)
+            End If
+        End While
+        MsgBox("Done")
+
+
+
+    End Sub
 
     Private Sub Circle_move_Click(sender As Object, e As EventArgs) Handles Circle_move.Click
         Enr = New EnRoute3.EnrouteApp
@@ -188,46 +246,7 @@
 
 
 
-    Private Sub selection_Click(sender As Object, e As EventArgs) Handles selection.Click
-        Enr = New EnRoute3.EnrouteApp
-        doc = Enr.ActiveDrawing
-        totalArea = 0.0
 
-        If doc Is Nothing Then
-            MsgBox("No Active File")
-            End
-        End If
-        layer = doc.ActiveLayer
-        selec = doc.Selection
-
-        If selec.Count = 0 Then
-            MsgBox("Select an object")
-        End If
-        Dim stratiter = 0
-        While stratiter < Enr.Strategies.Count
-
-            ' ComboBox1.Items.Add()
-        End While
-
-        Dim aaa = 0
-        Dim selection = 0
-        Dim bbb = NumericUpDown2.Value
-        While aaa < selec.Count
-            ID = selec.Members.Item(aaa).MemberHandle
-            group = doc.FindGroup(ID)
-            Dim group2 = 0
-            Dim size = group.MaxX - group.MinX
-            If size = bbb Then
-                group.Select()
-                '  selec.AddStrategy()
-
-            End If
-        End While
-        MsgBox("Done")
-
-
-
-    End Sub
 
     Private Sub moveallx_Click(sender As Object, e As EventArgs) Handles moveallx.Click
         Enr = New EnRoute3.EnrouteApp()

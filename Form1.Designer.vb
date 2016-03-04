@@ -54,7 +54,7 @@ Partial Class Form1
         'NumericUpDown1
         '
         Me.NumericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.NumericUpDown1.BackColor = System.Drawing.SystemColors.Window
+        Me.NumericUpDown1.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.NumericUpDown1.DecimalPlaces = 4
         Me.NumericUpDown1.Increment = New Decimal(New Integer() {625, 0, 0, 262144})
         Me.NumericUpDown1.Location = New System.Drawing.Point(81, 7)
@@ -137,6 +137,7 @@ Partial Class Form1
         '
         'NumericUpDown2
         '
+        Me.NumericUpDown2.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.NumericUpDown2.Location = New System.Drawing.Point(347, 323)
         Me.NumericUpDown2.Name = "NumericUpDown2"
         Me.NumericUpDown2.Size = New System.Drawing.Size(80, 20)
@@ -277,6 +278,7 @@ Partial Class Form1
         '
         'NumericUpDown3
         '
+        Me.NumericUpDown3.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.NumericUpDown3.Location = New System.Drawing.Point(433, 323)
         Me.NumericUpDown3.Name = "NumericUpDown3"
         Me.NumericUpDown3.Size = New System.Drawing.Size(80, 20)
@@ -284,6 +286,7 @@ Partial Class Form1
         '
         'ComboBox1
         '
+        Me.ComboBox1.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(175, 323)
         Me.ComboBox1.Name = "ComboBox1"
