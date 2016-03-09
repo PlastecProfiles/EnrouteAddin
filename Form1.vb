@@ -201,13 +201,13 @@
         If selec.Count = 0 Then
             MsgBox("Select an object")
         End If
+        group = layer.CreateGroup
+        contour = group.CreateContour
+        seg = contour.Seg(0)
+        bez = segment.Item(0).SegID.siBezier
+        ' ID = contour.Segments.Item(1).SegID
+        MsgBox(bez.Control1Y)
 
-        Dim iii = 0
-        ID = selec.Members.Item(iii).MemberHandle
-        group = doc.FindGroup(ID)
-        MsgBox(group.MaxX)
-        MsgBox(group.MaxY)
-        MsgBox("Done")
 
     End Sub
 
