@@ -204,9 +204,14 @@
         group = layer.CreateGroup
         contour = group.CreateContour
         seg = contour.Seg(0)
-        bez = segment.Item(0).SegID.siBezier
-        ' ID = contour.Segments.Item(1).SegID
-        MsgBox(bez.Control1Y)
+        segment = contour.Segments
+        ID = seg.SegID
+        MsgBox(seg.SegID)
+        If ID = 2 Then
+            bez = segment.Item(0)
+
+            MsgBox(bez.Control1X)
+        End If
 
 
     End Sub

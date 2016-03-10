@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PlastecAddins.exe" size="75092464">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PlastecAddins.exe" size="75092976">
       <assemblyIdentity name="PlastecAddins" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TdvNYOG3UsvSjaBGSwyv6L+MML/NQwS5sh5tc5yMpMo=</dsig:DigestValue>
+        <dsig:DigestValue>1SFWftLsWeiwcVGPlLVfk1+BQeVSZ9tkAVj41M2ZMlE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
