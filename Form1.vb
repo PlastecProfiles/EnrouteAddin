@@ -84,16 +84,21 @@
 
         Dim aaa = 0
         Dim selection = 0
-        Dim bbb = NumericUpDown2.Value
-        While aaa < selec.Count
+        Dim bbb = X.Value
+        Dim count = selec.Count
+
+
+
+        While aaa < count
             ID = selec.Members.Item(aaa).MemberHandle
             group = doc.FindGroup(ID)
             Dim group2 As EnRoute3.EErrorCode
             Dim size = group.MaxX - group.MinX
             If size = bbb Then
                 group.Select()
-                'selec.AddStrategy(ComboBox1.SelectedItem(ID), ComboBox1.SelectedItem(Name))
+
                 group2 = selec.AddGroup(group)
+                aaa = aaa + 1
             End If
         End While
         MsgBox("Done")
@@ -205,13 +210,39 @@
         contour = group.CreateContour
         seg = contour.Seg(0)
         segment = contour.Segments
-        ID = seg.SegID
-        MsgBox(seg.SegID)
-        If ID = 2 Then
-            bez = segment.Item(0)
+        Dim segiter = 0
+        While segiter < segment.Count
+            seg = contour.Seg(segiter)
+            ID = seg.SegID
+            MsgBox(segment.Count)
+            If ID = 0 Then
+                lin = seg
+                MsgBox(lin.StartX)
+            End If
 
-            MsgBox(bez.Control1X)
-        End If
+            If ID = 1 Then
+                arc = seg
+
+                MsgBox(arc.CenterX)
+            End If
+            If ID = 2 Then
+                bez = seg
+
+                MsgBox(bez.Control1X)
+            End If
+            If ID = 3 Then
+                rbez = seg
+
+                MsgBox(rbez.Weight1)
+            End If
+            If ID = 4 Then
+
+
+                MsgBox("terminater")
+            End If
+            segiter = segiter + 1
+        End While
+
 
 
     End Sub

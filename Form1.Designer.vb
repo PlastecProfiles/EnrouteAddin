@@ -32,7 +32,7 @@ Partial Class Form1
         Me.Circle_move = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.selection = New System.Windows.Forms.Button()
-        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
+        Me.X = New System.Windows.Forms.NumericUpDown()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -43,12 +43,10 @@ Partial Class Form1
         Me.Label8 = New System.Windows.Forms.Label()
         Me.moveallx = New System.Windows.Forms.Button()
         Me.moveally = New System.Windows.Forms.Button()
-        Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.X, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NumericUpDown1
@@ -135,13 +133,13 @@ Partial Class Form1
         Me.selection.Text = "Select"
         Me.selection.UseVisualStyleBackColor = True
         '
-        'NumericUpDown2
+        'X
         '
-        Me.NumericUpDown2.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.NumericUpDown2.Location = New System.Drawing.Point(347, 323)
-        Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.Size = New System.Drawing.Size(80, 20)
-        Me.NumericUpDown2.TabIndex = 19
+        Me.X.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.X.Location = New System.Drawing.Point(261, 323)
+        Me.X.Name = "X"
+        Me.X.Size = New System.Drawing.Size(80, 20)
+        Me.X.TabIndex = 19
         '
         'TableLayoutPanel1
         '
@@ -168,9 +166,8 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.Test, 1, 10)
         Me.TableLayoutPanel1.Controls.Add(Me.moveallx, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.moveally, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.NumericUpDown3, 5, 8)
-        Me.TableLayoutPanel1.Controls.Add(Me.NumericUpDown2, 4, 8)
-        Me.TableLayoutPanel1.Controls.Add(Me.ComboBox1, 2, 8)
+        Me.TableLayoutPanel1.Controls.Add(Me.X, 3, 8)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label9, 2, 8)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(39, 70)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 11
@@ -276,22 +273,14 @@ Partial Class Form1
         Me.moveally.Text = "Move y"
         Me.moveally.UseVisualStyleBackColor = True
         '
-        'NumericUpDown3
+        'Label9
         '
-        Me.NumericUpDown3.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.NumericUpDown3.Location = New System.Drawing.Point(433, 323)
-        Me.NumericUpDown3.Name = "NumericUpDown3"
-        Me.NumericUpDown3.Size = New System.Drawing.Size(80, 20)
-        Me.NumericUpDown3.TabIndex = 30
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(175, 323)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(80, 21)
-        Me.ComboBox1.TabIndex = 31
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(175, 320)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(14, 13)
+        Me.Label9.TabIndex = 31
+        Me.Label9.Text = "X"
         '
         'Form1
         '
@@ -307,10 +296,9 @@ Partial Class Form1
         Me.Text = "PlastecAddins"
         Me.TransparencyKey = System.Drawing.Color.Transparent
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.X, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -324,7 +312,7 @@ Partial Class Form1
     Friend WithEvents Circle_move As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents selection As Button
-    Friend WithEvents NumericUpDown2 As NumericUpDown
+    Friend WithEvents X As NumericUpDown
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
@@ -335,6 +323,5 @@ Partial Class Form1
     Friend WithEvents Label10 As Label
     Friend WithEvents moveallx As Button
     Friend WithEvents moveally As Button
-    Friend WithEvents NumericUpDown3 As NumericUpDown
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label9 As Label
 End Class
