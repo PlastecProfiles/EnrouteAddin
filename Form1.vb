@@ -210,12 +210,13 @@
         contour = group.CreateContour
         Dim segiter = 0
         seg = contour.Seg(segiter)
-
-
-        While segiter < contour.SegCount
-
+        segment = contour.Segments
+        Dim secount = segment.Count
+        While segiter < secount
+            seg = contour.Seg(segiter)
+            segment = contour.Segments.Item(segiter)
             ID = seg.SegID
-            MsgBox(contour.SegCount)
+            MsgBox(secount)
             If ID = 0 Then
                 lin = seg
                 MsgBox(lin.StartX)
