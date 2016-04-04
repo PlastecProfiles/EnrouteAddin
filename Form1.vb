@@ -208,13 +208,14 @@
         End If
         group = layer.CreateGroup
         contour = group.CreateContour
-        seg = contour.Seg(0)
-        segment = contour.Segments
         Dim segiter = 0
-        While segiter < segment.Count
-            seg = contour.Seg(segiter)
+        seg = contour.Seg(segiter)
+
+
+        While segiter < contour.SegCount
+
             ID = seg.SegID
-            MsgBox(segment.Count)
+            MsgBox(contour.SegCount)
             If ID = 0 Then
                 lin = seg
                 MsgBox(lin.StartX)
