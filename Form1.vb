@@ -207,7 +207,7 @@
             MsgBox("Select an object")
         End If
         group = layer.CreateGroup
-        contour = group.CreateContour
+        contour = doc.GetContours(2, 1, 1)
         Dim segiter = 0
         seg = contour.Seg(segiter)
         segment = contour.Segments
