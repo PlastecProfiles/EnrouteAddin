@@ -64,6 +64,8 @@
     'End While
     'End Sub
 
+
+
     Private Sub selection_Click(sender As Object, e As EventArgs) Handles selection.Click
         Enr = New EnRoute3.EnrouteApp
         doc = Enr.ActiveDrawing
@@ -340,5 +342,11 @@
         End While
         MsgBox("Done")
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Enr = New EnRoute3.EnrouteApp()
+        doc = Enr.ActiveDrawing
+        doc.SaveAs("C:\Users\Matthew Martin\Documents\1111")
     End Sub
 End Class
