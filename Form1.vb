@@ -204,48 +204,55 @@
         End If
         layer = doc.ActiveLayer
         selec = doc.Selection
+        selec.SelectAll()
 
         If selec.Count = 0 Then
             MsgBox("Select an object")
         End If
         group = layer.CreateGroup
-        contour = doc.GetContours(2, 1, 1)
-        Dim segiter = 0
-        seg = contour.Seg(segiter)
-        segment = contour.Segments
-        Dim secount = segment.Count
-        While segiter < secount
-            seg = contour.Seg(segiter)
-            segment = contour.Segments.Item(segiter)
-            ID = seg.SegID
-            MsgBox(secount)
-            If ID = 0 Then
-                lin = seg
-                MsgBox(lin.StartX)
-            End If
 
-            If ID = 1 Then
-                arc = seg
+        Dim iii = 0
+        Dim ooo = 0
+        While iii < selec.Count
+            contour = selec.Item(iii).Item(iii)
+            iii = iii + 1
 
-                MsgBox(arc.CenterX)
-            End If
-            If ID = 2 Then
-                bez = seg
+            While ooo < contour.SegCount
 
-                MsgBox(bez.Control1X)
-            End If
-            If ID = 3 Then
-                rbez = seg
+                seg = contour.Seg(ooo)
+                ID = seg.SegID
+                MsgBox(ooo)
+                If ID = 0 Then
+                    lin = seg
+                    MsgBox(lin.StartX)
+                End If
 
-                MsgBox(rbez.Weight1)
-            End If
-            If ID = 4 Then
+                If ID = 1 Then
+                    arc = seg
+
+                    MsgBox(arc.CenterX)
+                End If
+                If ID = 2 Then
+                    bez = seg
+
+                    MsgBox(bez.Control1X)
+                End If
+                If ID = 3 Then
+                    rbez = seg
+
+                    MsgBox(rbez.Weight1)
+                End If
+                If ID = 4 Then
 
 
-                MsgBox("terminater")
-            End If
-            segiter = segiter + 1
+                    MsgBox("terminater")
+                End If
+                ooo = ooo + 1
+            End While
+
         End While
+
+
 
 
 
@@ -308,7 +315,7 @@
         While iterate1 < selec.Count
             ID = selec.Members.Item(iterate1).MemberHandle
             group = doc.FindGroup(ID)
-            group.MoveToTarget(xxx - NumericUpDown1.Value + 0.0001, selec.MinY, 0, 0, 0, 0)
+            group.MoveToTarget(xxx - NumericUpDown1.Value + 0.0001, selec.MinY, selec.MinZ, 0, 0, 0)
             xxx = group.MaxX
             iterate1 = iterate1 + 1
         End While
@@ -336,7 +343,7 @@
         While iterate2 < selec.Count
             ID = selec.Members.Item(iterate2).MemberHandle
             group = doc.FindGroup(ID)
-            group.MoveToTarget(selec.MinX, yyy - NumericUpDown1.Value + 0.0001, 0, 0, 0, 0)
+            group.MoveToTarget(selec.MinX, yyy - NumericUpDown1.Value + 0.0001, selec.MinZ, 0, 0, 0)
             yyy = group.MaxY
             iterate2 = iterate2 + 1
         End While
