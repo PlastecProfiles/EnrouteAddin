@@ -356,4 +356,66 @@
         doc = Enr.ActiveDrawing
         doc.SaveAs("C:\Users\Matthew Martin\Documents\1111")
     End Sub
+
+    Private Sub Nest__Click(sender As Object, e As EventArgs) Handles Nest_.Click
+        Enr = New EnRoute3.EnrouteApp()
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
+
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+        selec.SelectAll()
+
+        If selec.Count = 0 Then
+            MsgBox("Select an object")
+        End If
+        group = layer.CreateGroup
+
+        Dim iii = 0
+        Dim ooo = 0
+        While iii < selec.Count
+            contour = selec.Item(iii).Item(iii)
+            iii = iii + 1
+
+            While ooo < contour.SegCount
+
+                seg = contour.Seg(ooo)
+                ID = seg.SegID
+
+                If ID = 0 Then
+                    lin = seg
+
+                End If
+
+                If ID = 1 Then
+                    arc = seg
+
+
+                End If
+                If ID = 2 Then
+                    bez = seg
+
+
+                End If
+                If ID = 3 Then
+                    rbez = seg
+
+
+                End If
+                If ID = 4 Then
+
+
+                    MsgBox("terminater")
+                End If
+                ooo = ooo + 1
+            End While
+
+        End While
+
+
+    End Sub
 End Class

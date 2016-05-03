@@ -34,6 +34,7 @@ Partial Class Form1
         Me.selection = New System.Windows.Forms.Button()
         Me.X = New System.Windows.Forms.NumericUpDown()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -44,7 +45,8 @@ Partial Class Form1
         Me.moveallx = New System.Windows.Forms.Button()
         Me.moveally = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Nest_ = New System.Windows.Forms.Button()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.X, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -164,12 +166,14 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.Count, 1, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.Label7, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Circle_move, 1, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.Test, 1, 10)
         Me.TableLayoutPanel1.Controls.Add(Me.moveallx, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.moveally, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.X, 3, 8)
         Me.TableLayoutPanel1.Controls.Add(Me.Label9, 2, 8)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label11, 0, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.Nest_, 1, 5)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(39, 70)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 11
@@ -186,6 +190,15 @@ Partial Class Form1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(518, 443)
         Me.TableLayoutPanel1.TabIndex = 20
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(89, 363)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 21
+        Me.Button1.Text = "save"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -251,7 +264,7 @@ Partial Class Form1
         '
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(9, 253)
+        Me.Label8.Location = New System.Drawing.Point(9, 293)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(67, 13)
         Me.Label8.TabIndex = 24
@@ -284,14 +297,24 @@ Partial Class Form1
         Me.Label9.TabIndex = 31
         Me.Label9.Text = "X"
         '
-        'Button1
+        'Label11
         '
-        Me.Button1.Location = New System.Drawing.Point(89, 363)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 21
-        Me.Button1.Text = "save"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(28, 213)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(29, 13)
+        Me.Label11.TabIndex = 32
+        Me.Label11.Text = "Nest"
+        '
+        'Nest_
+        '
+        Me.Nest_.Location = New System.Drawing.Point(89, 203)
+        Me.Nest_.Name = "Nest_"
+        Me.Nest_.Size = New System.Drawing.Size(75, 23)
+        Me.Nest_.TabIndex = 33
+        Me.Nest_.Text = "Nest"
+        Me.Nest_.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -336,4 +359,6 @@ Partial Class Form1
     Friend WithEvents moveally As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Nest_ As Button
 End Class
