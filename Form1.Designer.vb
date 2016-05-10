@@ -41,10 +41,10 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.moveallx = New System.Windows.Forms.Button()
         Me.moveally = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Nest_ = New System.Windows.Forms.Button()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -171,9 +171,9 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.moveally, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.X, 3, 8)
         Me.TableLayoutPanel1.Controls.Add(Me.Label9, 2, 8)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 7)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label11, 0, 5)
-        Me.TableLayoutPanel1.Controls.Add(Me.Nest_, 1, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label11, 0, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.Nest_, 1, 7)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(39, 70)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 11
@@ -260,16 +260,6 @@ Partial Class Form1
         Me.Label7.TabIndex = 23
         Me.Label7.Text = "Circle move"
         '
-        'Label8
-        '
-        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(9, 293)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(67, 13)
-        Me.Label8.TabIndex = 24
-        Me.Label8.Text = "Experimental"
-        '
         'moveallx
         '
         Me.moveallx.Location = New System.Drawing.Point(89, 3)
@@ -297,11 +287,21 @@ Partial Class Form1
         Me.Label9.TabIndex = 31
         Me.Label9.Text = "X"
         '
+        'Label8
+        '
+        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(9, 253)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(67, 13)
+        Me.Label8.TabIndex = 24
+        Me.Label8.Text = "Experimental"
+        '
         'Label11
         '
         Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(28, 213)
+        Me.Label11.Location = New System.Drawing.Point(28, 293)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(29, 13)
         Me.Label11.TabIndex = 32
@@ -309,7 +309,7 @@ Partial Class Form1
         '
         'Nest_
         '
-        Me.Nest_.Location = New System.Drawing.Point(89, 203)
+        Me.Nest_.Location = New System.Drawing.Point(89, 283)
         Me.Nest_.Name = "Nest_"
         Me.Nest_.Size = New System.Drawing.Size(75, 23)
         Me.Nest_.TabIndex = 33

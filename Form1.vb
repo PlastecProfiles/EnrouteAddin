@@ -17,26 +17,26 @@
     Dim err As EnRoute3.EErrorCode
     Dim nest As EnRoute3.ENestOptions
     Dim ID As Long
-    Dim angle As Double
-    Dim startx As Double
-    Dim starty As Double
-    Dim startz As Double
-    Dim centerx As Double
-    Dim centery As Double
-    Dim centerz As Double
-    Dim c1x As Double
+    Dim angle(10000) As Double
+    Dim startx(10000) As Double
+    Dim starty(10000) As Double
+    Dim startz(10000) As Double
+    Dim centerx(10000) As Double
+    Dim centery(10000) As Double
+    Dim centerz(10000) As Double
+    Dim c1x(10000) As Double
     Dim b1x As Double
     Dim b1y As Double
-    Dim c1y As Double
-    Dim c1z As Double
-    Dim c2x As Double
-    Dim c2y As Double
-    Dim c2z As Double
+    Dim c1y(10000) As Double
+    Dim c1z(10000) As Double
+    Dim c2x(10000) As Double
+    Dim c2y(10000) As Double
+    Dim c2z(10000) As Double
     Dim dia As Decimal
-    Dim w0 As Double
-    Dim w1 As Double
-    Dim w2 As Double
-    Dim w3 As Double
+    Dim w0(10000) As Double
+    Dim w1(10000) As Double
+    Dim w2(10000) As Double
+    Dim w3(10000) As Double
     Dim totalArea As Double
     Dim bit As Decimal
     Dim bit2 As Decimal
@@ -127,17 +127,19 @@
 
         bit = NumericUpDown1.Value
         Dim ddd = selec.MaxX - selec.MinX
+
         dia = ddd - bit
         ' Dim bit2 = bit / 2
         selec.Copy()
         contour = group.CreateRect(selec.MinX, selec.MinY, 0, selec.MinX, selec.MaxY - bit + 0.0001, 0)
 
         contour.RotateXY(-60, selec.MinX, selec.MinY)
-        w1 = contour.MaxX
-        w2 = contour.MaxY
+        Dim xxx = contour.MaxX
+        Dim yyy = contour.MaxY
+        Dim zzz = selec.MinZ
         selec.Paste()
 
-        selec.MoveToTarget(w1, w2, 0, 0, 0, 0)
+        selec.MoveToTarget(xxx, yyy, zzz, 0, 0, 0)
         MsgBox("Done")
     End Sub
 
@@ -388,22 +390,51 @@
 
                 If ID = 0 Then
                     lin = seg
+                    startx(ooo) = lin.StartX
+                    starty(ooo) = lin.StartY
+                    startz(ooo) = lin.StartZ
 
                 End If
 
                 If ID = 1 Then
                     arc = seg
-
+                    startx(ooo) = arc.StartX
+                    starty(ooo) = arc.StartY
+                    startz(ooo) = arc.StartZ
+                    angle(ooo) = arc.SweepAngle
+                    centerx(ooo) = arc.CenterX
+                    centery(ooo) = arc.CenterY
+                    centerz(ooo) = arc.CenterZ
 
                 End If
                 If ID = 2 Then
                     bez = seg
-
+                    startx(ooo) = bez.StartX
+                    starty(ooo) = bez.StartY
+                    startz(ooo) = bez.StartZ
+                    c1x(ooo) = bez.Control1X
+                    c1y(ooo) = bez.Control1Y
+                    c1z(ooo) = bez.Control1Z
+                    c2x(ooo) = bez.Control2X
+                    c2y(ooo) = bez.Control2Y
+                    c2z(ooo) = bez.Control2Z
 
                 End If
                 If ID = 3 Then
                     rbez = seg
-
+                    startx(ooo) = rbez.StartX
+                    starty(ooo) = rbez.StartY
+                    startz(ooo) = rbez.StartZ
+                    c1x(ooo) = rbez.Control1X
+                    c1y(ooo) = rbez.Control1Y
+                    c1z(ooo) = rbez.Control1Z
+                    c2x(ooo) = rbez.Control2X
+                    c2y(ooo) = rbez.Control2Y
+                    c2z(ooo) = rbez.Control2Z
+                    w0(ooo) = rbez.Weight0
+                    w1(ooo) = rbez.Weight1
+                    w2(ooo) = rbez.Weight2
+                    w3(ooo) = rbez.Weight3
 
                 End If
                 If ID = 4 Then
