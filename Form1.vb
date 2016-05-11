@@ -284,17 +284,20 @@
             group = doc.FindGroup(ID)
             Dim xxx = group.MaxX - group.MinX
             Dim yyy = group.MaxY - group.MinY
+            xxx = xxx / 2
+            yyy = yyy / 2
             Dim ccx = group.MaxX - xxx / 2
             Dim ccy = group.MaxY - yyy / 2
 
             If xxx < yyy Then
-                group.CreateCircle(ccx, ccy, 0, yyy / 2)
+                layer.CreateCircle(ccx, ccy, yyy)
             Else
-                group.CreateCircle(ccx, ccy, 0, xxx / 2)
+                layer.CreateCircle(ccx, ccy, xxx)
 
             End If
-            selec.DeleteMembers()
+            iter1 = iter1 + 1
         End While
+        selec.DeleteMembers()
         MsgBox("Done")
 
     End Sub
