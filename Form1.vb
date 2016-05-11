@@ -17,6 +17,7 @@
     Dim err As EnRoute3.EErrorCode
     Dim nest As EnRoute3.ENestOptions
     Dim ID As Long
+    Dim IDNumber(10000) As Long
     Dim angle(10000) As Double
     Dim startx(10000) As Double
     Dim starty(10000) As Double
@@ -130,15 +131,16 @@
 
         dia = ddd - bit
         ' Dim bit2 = bit / 2
-        selec.Copy()
+
         contour = group.CreateRect(selec.MinX, selec.MinY, 0, selec.MinX, selec.MaxY - bit + 0.0001, 0)
 
         contour.RotateXY(-60, selec.MinX, selec.MinY)
         Dim xxx = contour.MaxX
         Dim yyy = contour.MaxY
         Dim zzz = selec.MinZ
+        selec.Copy()
+        Clipboard.SetData("Format", selec)
         selec.Paste()
-
         selec.MoveToTarget(xxx, yyy, zzz, 0, 0, 0)
         MsgBox("Done")
     End Sub
@@ -275,18 +277,24 @@
         If selec.Count = 0 Then
             MsgBox("Select an object")
         End If
-        group = layer.CreateGroup
-        Dim xxx = selec.MaxX - selec.MinX
-        Dim yyy = selec.MaxY - selec.MinY
-        Dim ccx = selec.MaxX - xxx / 2
-        Dim ccy = selec.MaxY - yyy / 2
-        If xxx < yyy Then
-            group.CreateCircle(ccx, ccy, 0, yyy / 2)
-        Else
-            group.CreateCircle(ccx, ccy, 0, xxx / 2)
+        Dim iter1 = 0
+        While iter1 < selec.Count
 
-        End If
-        selec.DeleteMembers()
+            ID = selec.Members.Item(iter1).MemberHandle
+            group = doc.FindGroup(ID)
+            Dim xxx = group.MaxX - group.MinX
+            Dim yyy = group.MaxY - group.MinY
+            Dim ccx = group.MaxX - xxx / 2
+            Dim ccy = group.MaxY - yyy / 2
+
+            If xxx < yyy Then
+                group.CreateCircle(ccx, ccy, 0, yyy / 2)
+            Else
+                group.CreateCircle(ccx, ccy, 0, xxx / 2)
+
+            End If
+            selec.DeleteMembers()
+        End While
         MsgBox("Done")
 
     End Sub
@@ -379,6 +387,7 @@
 
         Dim iii = 0
         Dim ooo = 0
+
         While iii < selec.Count
             contour = selec.Item(iii).Item(iii)
             iii = iii + 1
@@ -387,7 +396,7 @@
 
                 seg = contour.Seg(ooo)
                 ID = seg.SegID
-
+                IDNumber(ooo) = ID
                 If ID = 0 Then
                     lin = seg
                     startx(ooo) = lin.StartX
