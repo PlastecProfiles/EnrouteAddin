@@ -284,11 +284,11 @@
             group = doc.FindGroup(ID)
             Dim xxx = group.MaxX - group.MinX
             Dim yyy = group.MaxY - group.MinY
-            xxx = xxx / 2
-            yyy = yyy / 2
+
             Dim ccx = group.MaxX - xxx / 2
             Dim ccy = group.MaxY - yyy / 2
-
+            xxx = xxx / 2
+            yyy = yyy / 2
             If xxx < yyy Then
                 layer.CreateCircle(ccx, ccy, yyy)
             Else
