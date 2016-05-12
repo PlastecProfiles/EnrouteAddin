@@ -364,11 +364,7 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Enr = New EnRoute3.EnrouteApp()
-        doc = Enr.ActiveDrawing
-        doc.SaveAs("C:\Users\Matthew Martin\Documents\1111")
-    End Sub
+
 
     Private Sub Nest__Click(sender As Object, e As EventArgs) Handles Nest_.Click
         Enr = New EnRoute3.EnrouteApp()

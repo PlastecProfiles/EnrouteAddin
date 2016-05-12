@@ -34,7 +34,6 @@ Partial Class Form1
         Me.selection = New System.Windows.Forms.Button()
         Me.X = New System.Windows.Forms.NumericUpDown()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -154,7 +153,6 @@ Partial Class Form1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Button1, 1, 9)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.selection, 1, 8)
         Me.TableLayoutPanel1.Controls.Add(Me.Label10, 0, 8)
@@ -190,15 +188,6 @@ Partial Class Form1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(518, 443)
         Me.TableLayoutPanel1.TabIndex = 20
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(89, 363)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 21
-        Me.Button1.Text = "save"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -358,7 +347,6 @@ Partial Class Form1
     Friend WithEvents moveallx As Button
     Friend WithEvents moveally As Button
     Friend WithEvents Label9 As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents Nest_ As Button
 End Class

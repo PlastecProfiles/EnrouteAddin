@@ -27,7 +27,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <ApplicationRevision>24</ApplicationRevision>
-    <ApplicationVersion>3.5.0.%2a</ApplicationVersion>
+    <ApplicationVersion>5.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
