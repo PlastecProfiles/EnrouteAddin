@@ -65,6 +65,19 @@
     'End While
     'End Sub
 
+    Private Sub Main()
+        Enr = New EnRoute3.EnrouteApp
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
+
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+        selection.PerformClick(selection_Click())
+    End Sub
 
 
     Private Sub selection_Click(sender As Object, e As EventArgs) Handles selection.Click
