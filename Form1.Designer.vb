@@ -46,9 +46,21 @@ Partial Class Form1
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Nest_ = New System.Windows.Forms.Button()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.XToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.YToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CircleMoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditStartToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CircleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Clean = New System.Windows.Forms.Label()
+        Me.Clean_ = New System.Windows.Forms.Button()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.X, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'NumericUpDown1
@@ -57,7 +69,7 @@ Partial Class Form1
         Me.NumericUpDown1.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.NumericUpDown1.DecimalPlaces = 4
         Me.NumericUpDown1.Increment = New Decimal(New Integer() {625, 0, 0, 262144})
-        Me.NumericUpDown1.Location = New System.Drawing.Point(81, 7)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(80, 25)
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(82, 20)
         Me.NumericUpDown1.TabIndex = 3
@@ -120,7 +132,7 @@ Partial Class Form1
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(36, 9)
+        Me.Label2.Location = New System.Drawing.Point(36, 27)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(39, 13)
         Me.Label2.TabIndex = 15
@@ -172,6 +184,8 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.Label11, 0, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.Nest_, 1, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.Clean, 0, 9)
+        Me.TableLayoutPanel1.Controls.Add(Me.Clean_, 1, 9)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(39, 70)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 11
@@ -305,6 +319,92 @@ Partial Class Form1
         Me.Nest_.Text = "Nest"
         Me.Nest_.UseVisualStyleBackColor = True
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolsToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 1, 0, 1)
+        Me.MenuStrip1.Size = New System.Drawing.Size(709, 24)
+        Me.MenuStrip1.TabIndex = 21
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ToolsToolStripMenuItem
+        '
+        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MoveToolStripMenuItem, Me.CircleMoveToolStripMenuItem, Me.CountToolStripMenuItem, Me.EditStartToolStripMenuItem, Me.CircleToolStripMenuItem})
+        Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
+        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(47, 22)
+        Me.ToolsToolStripMenuItem.Text = "&Tools"
+        '
+        'MoveToolStripMenuItem
+        '
+        Me.MoveToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.XToolStripMenuItem, Me.YToolStripMenuItem})
+        Me.MoveToolStripMenuItem.Name = "MoveToolStripMenuItem"
+        Me.MoveToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.MoveToolStripMenuItem.Text = "&Move"
+        '
+        'XToolStripMenuItem
+        '
+        Me.XToolStripMenuItem.Name = "XToolStripMenuItem"
+        Me.XToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
+        Me.XToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.XToolStripMenuItem.Text = "&X"
+        '
+        'YToolStripMenuItem
+        '
+        Me.YToolStripMenuItem.Name = "YToolStripMenuItem"
+        Me.YToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.B), System.Windows.Forms.Keys)
+        Me.YToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.YToolStripMenuItem.Text = "&Y"
+        '
+        'CircleMoveToolStripMenuItem
+        '
+        Me.CircleMoveToolStripMenuItem.Name = "CircleMoveToolStripMenuItem"
+        Me.CircleMoveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
+        Me.CircleMoveToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.CircleMoveToolStripMenuItem.Text = "&Circle Move"
+        '
+        'CountToolStripMenuItem
+        '
+        Me.CountToolStripMenuItem.Name = "CountToolStripMenuItem"
+        Me.CountToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
+        Me.CountToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.CountToolStripMenuItem.Text = "Co&unt"
+        '
+        'EditStartToolStripMenuItem
+        '
+        Me.EditStartToolStripMenuItem.Name = "EditStartToolStripMenuItem"
+        Me.EditStartToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
+        Me.EditStartToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.EditStartToolStripMenuItem.Text = "&Edit Start"
+        '
+        'CircleToolStripMenuItem
+        '
+        Me.CircleToolStripMenuItem.Name = "CircleToolStripMenuItem"
+        Me.CircleToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
+        Me.CircleToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.CircleToolStripMenuItem.Text = "Circ&le"
+        '
+        'Clean
+        '
+        Me.Clean.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Clean.AutoSize = True
+        Me.Clean.Location = New System.Drawing.Point(26, 373)
+        Me.Clean.Name = "Clean"
+        Me.Clean.Size = New System.Drawing.Size(34, 13)
+        Me.Clean.TabIndex = 34
+        Me.Clean.Text = "Clean"
+        '
+        'Clean_
+        '
+        Me.Clean_.Location = New System.Drawing.Point(89, 363)
+        Me.Clean_.Name = "Clean_"
+        Me.Clean_.Size = New System.Drawing.Size(75, 23)
+        Me.Clean_.TabIndex = 35
+        Me.Clean_.Text = "Clean"
+        Me.Clean_.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -314,6 +414,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.NumericUpDown1)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.Text = "PlastecAddins"
@@ -322,6 +423,8 @@ Partial Class Form1
         CType(Me.X, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -349,4 +452,15 @@ Partial Class Form1
     Friend WithEvents Label9 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Nest_ As Button
+    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents ToolsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MoveToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents XToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents YToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CircleMoveToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CountToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EditStartToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CircleToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Clean As Label
+    Friend WithEvents Clean_ As Button
 End Class

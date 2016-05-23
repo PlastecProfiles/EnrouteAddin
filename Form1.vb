@@ -64,20 +64,8 @@
     '       ComboBox1.Items.Add(Enr.Strategies.Item(stratiter).StrategyId & Enr.Strategies.Item(stratiter).Name)
     'End While
     'End Sub
+    
 
-    Private Sub Main()
-        Enr = New EnRoute3.EnrouteApp
-        doc = Enr.ActiveDrawing
-        totalArea = 0.0
-
-        If doc Is Nothing Then
-            MsgBox("No Active File")
-            End
-        End If
-        layer = doc.ActiveLayer
-        selec = doc.Selection
-        selection.PerformClick(selection_Click())
-    End Sub
 
 
     Private Sub selection_Click(sender As Object, e As EventArgs) Handles selection.Click
@@ -119,7 +107,7 @@
         End While
         MsgBox("Done")
 
-
+        UpdateLog("Selection")
 
     End Sub
 
@@ -156,6 +144,7 @@
         selec.Paste()
         selec.MoveToTarget(xxx, yyy, zzz, 0, 0, 0)
         MsgBox("Done")
+        UpdateLog("Circle Move")
     End Sub
 
 
@@ -180,6 +169,7 @@
             MsgBox("Select an object")
         End If
         MsgBox(selec.Count)
+        UpdateLog("Count")
     End Sub
 
     Private Sub Edit_Start_Click(sender As Object, e As EventArgs) Handles Edit_Start.Click
@@ -202,7 +192,7 @@
         selec.ScaleBy(1, 1, 1)
         doc.ReDraw()
         MsgBox("Done")
-
+        UpdateLog("Edit Start")
     End Sub
 
 
@@ -269,6 +259,7 @@
 
         End While
 
+        UpdateLog("Test")
 
 
 
@@ -312,7 +303,7 @@
         End While
         selec.DeleteMembers()
         MsgBox("Done")
-
+        UpdateLog("Circle")
     End Sub
 
 
@@ -346,7 +337,7 @@
             iterate1 = iterate1 + 1
         End While
         MsgBox("Done")
-
+        UpdateLog("Moveallx")
     End Sub
 
     Private Sub moveally_Click(sender As Object, e As EventArgs) Handles moveally.Click
@@ -374,7 +365,7 @@
             iterate2 = iterate2 + 1
         End While
         MsgBox("Done")
-
+        UpdateLog("Moveally")
     End Sub
 
 
@@ -468,6 +459,132 @@
 
         End While
 
-
+        UpdateLog("Nest")
     End Sub
+
+    Private Sub Clean__Click(sender As Object, e As EventArgs) Handles Clean_.Click
+        Enr = New EnRoute3.EnrouteApp()
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
+
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+        selec.SelectAll()
+
+        If selec.Count = 0 Then
+            MsgBox("Select an object")
+        End If
+        group = layer.CreateGroup
+
+        Dim iii = 0
+        Dim ooo = 0
+
+        While iii < selec.Count
+            contour = selec.Item(iii).Item(iii)
+            iii = iii + 1
+
+            While ooo < contour.SegCount
+
+                seg = contour.Seg(ooo)
+                ID = seg.SegID
+                IDNumber(ooo) = ID
+                If ID = 0 Then
+                    lin = seg
+                    startx(ooo) = lin.StartX
+                    starty(ooo) = lin.StartY
+                    startz(ooo) = lin.StartZ
+
+                End If
+
+                If ID = 1 Then
+                    arc = seg
+                    startx(ooo) = arc.StartX
+                    starty(ooo) = arc.StartY
+                    startz(ooo) = arc.StartZ
+                    angle(ooo) = arc.SweepAngle
+                    centerx(ooo) = arc.CenterX
+                    centery(ooo) = arc.CenterY
+                    centerz(ooo) = arc.CenterZ
+
+                End If
+                If ID = 2 Then
+                    bez = seg
+                    startx(ooo) = bez.StartX
+                    starty(ooo) = bez.StartY
+                    startz(ooo) = bez.StartZ
+                    c1x(ooo) = bez.Control1X
+                    c1y(ooo) = bez.Control1Y
+                    c1z(ooo) = bez.Control1Z
+                    c2x(ooo) = bez.Control2X
+                    c2y(ooo) = bez.Control2Y
+                    c2z(ooo) = bez.Control2Z
+
+                End If
+                If ID = 3 Then
+                    rbez = seg
+                    startx(ooo) = rbez.StartX
+                    starty(ooo) = rbez.StartY
+                    startz(ooo) = rbez.StartZ
+                    c1x(ooo) = rbez.Control1X
+                    c1y(ooo) = rbez.Control1Y
+                    c1z(ooo) = rbez.Control1Z
+                    c2x(ooo) = rbez.Control2X
+                    c2y(ooo) = rbez.Control2Y
+                    c2z(ooo) = rbez.Control2Z
+                    w0(ooo) = rbez.Weight0
+                    w1(ooo) = rbez.Weight1
+                    w2(ooo) = rbez.Weight2
+                    w3(ooo) = rbez.Weight3
+
+                End If
+                If ID = 4 Then
+
+
+                    MsgBox("terminater")
+                End If
+                ooo = ooo + 1
+            End While
+
+        End While
+
+        UpdateLog("Clean")
+    End Sub
+
+    Private Sub XToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles XToolStripMenuItem.Click
+        moveallx.PerformClick()
+    End Sub
+
+    Private Sub YToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles YToolStripMenuItem.Click
+        moveally.PerformClick()
+    End Sub
+
+    Private Sub CircleMoveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CircleMoveToolStripMenuItem.Click
+        Circle_move.PerformClick()
+    End Sub
+
+    Private Sub CountToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CountToolStripMenuItem.Click
+        Count.PerformClick()
+    End Sub
+
+    Private Sub EditStartToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditStartToolStripMenuItem.Click
+        Edit_Start.PerformClick()
+    End Sub
+
+    Private Sub CircleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CircleToolStripMenuItem.Click
+        Circle.PerformClick()
+    End Sub
+
+
+    Private Sub UpdateLog(ByVal funcName As String)
+        Dim objFile As New System.IO.StreamWriter("\\Leon\customer files\PlastecAddins\ addinlog.txt", True)
+        objFile.WriteLine(My.User.Name & " " & Today & " " & funcName)
+        objFile.Close()
+        objFile.Dispose()
+    End Sub
+
+
 End Class
