@@ -46,6 +46,8 @@ Partial Class Form1
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Nest_ = New System.Windows.Forms.Button()
+        Me.Clean = New System.Windows.Forms.Label()
+        Me.Clean_ = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -55,12 +57,13 @@ Partial Class Form1
         Me.CountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditStartToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CircleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Clean = New System.Windows.Forms.Label()
-        Me.Clean_ = New System.Windows.Forms.Button()
+        Me.gap = New System.Windows.Forms.NumericUpDown()
+        Me.Label12 = New System.Windows.Forms.Label()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.X, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.gap, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NumericUpDown1
@@ -319,6 +322,25 @@ Partial Class Form1
         Me.Nest_.Text = "Nest"
         Me.Nest_.UseVisualStyleBackColor = True
         '
+        'Clean
+        '
+        Me.Clean.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Clean.AutoSize = True
+        Me.Clean.Location = New System.Drawing.Point(26, 373)
+        Me.Clean.Name = "Clean"
+        Me.Clean.Size = New System.Drawing.Size(34, 13)
+        Me.Clean.TabIndex = 34
+        Me.Clean.Text = "Clean"
+        '
+        'Clean_
+        '
+        Me.Clean_.Location = New System.Drawing.Point(89, 363)
+        Me.Clean_.Name = "Clean_"
+        Me.Clean_.Size = New System.Drawing.Size(75, 23)
+        Me.Clean_.TabIndex = 35
+        Me.Clean_.Text = "Clean"
+        Me.Clean_.UseVisualStyleBackColor = True
+        '
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
@@ -386,30 +408,35 @@ Partial Class Form1
         Me.CircleToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.CircleToolStripMenuItem.Text = "Circ&le"
         '
-        'Clean
+        'gap
         '
-        Me.Clean.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Clean.AutoSize = True
-        Me.Clean.Location = New System.Drawing.Point(26, 373)
-        Me.Clean.Name = "Clean"
-        Me.Clean.Size = New System.Drawing.Size(34, 13)
-        Me.Clean.TabIndex = 34
-        Me.Clean.Text = "Clean"
+        Me.gap.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.gap.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.gap.DecimalPlaces = 4
+        Me.gap.Increment = New Decimal(New Integer() {1, 0, 0, 262144})
+        Me.gap.Location = New System.Drawing.Point(280, 27)
+        Me.gap.Minimum = New Decimal(New Integer() {1, 0, 0, 262144})
+        Me.gap.Name = "gap"
+        Me.gap.Size = New System.Drawing.Size(82, 20)
+        Me.gap.TabIndex = 22
+        Me.gap.Value = New Decimal(New Integer() {1, 0, 0, 262144})
         '
-        'Clean_
+        'Label12
         '
-        Me.Clean_.Location = New System.Drawing.Point(89, 363)
-        Me.Clean_.Name = "Clean_"
-        Me.Clean_.Size = New System.Drawing.Size(75, 23)
-        Me.Clean_.TabIndex = 35
-        Me.Clean_.Text = "Clean"
-        Me.Clean_.UseVisualStyleBackColor = True
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(229, 32)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(25, 13)
+        Me.Label12.TabIndex = 23
+        Me.Label12.Text = "gap"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(709, 554)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.gap)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
@@ -425,6 +452,7 @@ Partial Class Form1
         Me.TableLayoutPanel1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.gap, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -463,4 +491,6 @@ Partial Class Form1
     Friend WithEvents CircleToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Clean As Label
     Friend WithEvents Clean_ As Button
+    Friend WithEvents gap As NumericUpDown
+    Friend WithEvents Label12 As Label
 End Class

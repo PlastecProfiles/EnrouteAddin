@@ -133,7 +133,7 @@
         dia = ddd - bit
         ' Dim bit2 = bit / 2
 
-        contour = group.CreateRect(selec.MinX, selec.MinY, 0, selec.MinX, selec.MaxY - bit + 0.0001, 0)
+        contour = group.CreateRect(selec.MinX, selec.MinY, 0, selec.MinX, selec.MaxY - bit + gap.Value, 0)
 
         contour.RotateXY(-60, selec.MinX, selec.MinY)
         Dim xxx = contour.MaxX
@@ -328,14 +328,15 @@
             MsgBox("Select an object")
         End If
         Dim iterate1 = 0
-        Dim xxx = selec.MinX + NumericUpDown1.Value - 0.0001
+        Dim xxx = selec.MinX + NumericUpDown1.Value - gap.Value
         While iterate1 < selec.Count
             ID = selec.Members.Item(iterate1).MemberHandle
             group = doc.FindGroup(ID)
-            group.MoveToTarget(xxx - NumericUpDown1.Value + 0.0001, selec.MinY, selec.MinZ, 0, 0, 0)
+            group.MoveToTarget(xxx - NumericUpDown1.Value + gap.Value, selec.MinY, selec.MinZ, 0, 0, 0)
             xxx = group.MaxX
             iterate1 = iterate1 + 1
         End While
+        selec.ScaleBy(1, 1, 1)
         MsgBox("Done")
         UpdateLog("Moveallx")
     End Sub
@@ -356,14 +357,15 @@
             MsgBox("Select an object")
         End If
         Dim iterate2 = 0
-        Dim yyy = selec.MinY + NumericUpDown1.Value - 0.0001
+        Dim yyy = selec.MinY + NumericUpDown1.Value - gap.Value
         While iterate2 < selec.Count
             ID = selec.Members.Item(iterate2).MemberHandle
             group = doc.FindGroup(ID)
-            group.MoveToTarget(selec.MinX, yyy - NumericUpDown1.Value + 0.0001, selec.MinZ, 0, 0, 0)
+            group.MoveToTarget(selec.MinX, yyy - NumericUpDown1.Value + gap.Value, selec.MinZ, 0, 0, 0)
             yyy = group.MaxY
             iterate2 = iterate2 + 1
         End While
+        selec.ScaleBy(1, 1, 1)
         MsgBox("Done")
         UpdateLog("Moveally")
     End Sub
@@ -551,6 +553,8 @@
 
         End While
 
+
+
         UpdateLog("Clean")
     End Sub
 
@@ -580,7 +584,7 @@
 
 
     Private Sub UpdateLog(ByVal funcName As String)
-        Dim objFile As New System.IO.StreamWriter("\\Leon\customer files\PlastecAddins\ addinlog.txt", True)
+        Dim objFile As New System.IO.StreamWriter("\\DESKTOP-GQO3164\Customer Files\PlastecAddins\ addinlog.txt", True)
         objFile.WriteLine(My.User.Name & " " & Today & " " & funcName)
         objFile.Close()
         objFile.Dispose()
