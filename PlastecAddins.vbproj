@@ -23,13 +23,14 @@
     <UpdateInterval>1</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\DESKTOP-GQO3164\Customer Files\PlastecAddins\</UpdateUrl>
+    <MinimumRequiredVersion>6.0.0.33</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>32</ApplicationRevision>
-    <ApplicationVersion>5.2.0.%2a</ApplicationVersion>
+    <ApplicationRevision>36</ApplicationRevision>
+    <ApplicationVersion>6.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -67,7 +68,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B50F3A6F4CD950F9A3D9145779FFA5FBAB699CCE</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A9EE15270444B44358D749F3417348E95FCCE423</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>PlastecAddins_TemporaryKey.pfx</ManifestKeyFile>
@@ -159,6 +160,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="PlastecAddins_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="EnRoute3">

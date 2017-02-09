@@ -34,6 +34,7 @@ Partial Class Form1
         Me.selection = New System.Windows.Forms.Button()
         Me.X = New System.Windows.Forms.NumericUpDown()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.connect = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -46,8 +47,6 @@ Partial Class Form1
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Nest_ = New System.Windows.Forms.Button()
-        Me.Clean = New System.Windows.Forms.Label()
-        Me.Clean_ = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -59,6 +58,8 @@ Partial Class Form1
         Me.CircleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gap = New System.Windows.Forms.NumericUpDown()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.block = New System.Windows.Forms.Button()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.X, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -168,6 +169,7 @@ Partial Class Form1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.TableLayoutPanel1.Controls.Add(Me.connect, 1, 9)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.selection, 1, 8)
         Me.TableLayoutPanel1.Controls.Add(Me.Label10, 0, 8)
@@ -187,8 +189,8 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.Label11, 0, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.Nest_, 1, 7)
-        Me.TableLayoutPanel1.Controls.Add(Me.Clean, 0, 9)
-        Me.TableLayoutPanel1.Controls.Add(Me.Clean_, 1, 9)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label13, 0, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.block, 1, 5)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(39, 70)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 11
@@ -205,6 +207,16 @@ Partial Class Form1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(518, 443)
         Me.TableLayoutPanel1.TabIndex = 20
+        '
+        'connect
+        '
+        Me.connect.Location = New System.Drawing.Point(89, 363)
+        Me.connect.Name = "connect"
+        Me.connect.Size = New System.Drawing.Size(75, 23)
+        Me.connect.TabIndex = 24
+        Me.connect.TabStop = False
+        Me.connect.Text = "connect"
+        Me.connect.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -322,25 +334,6 @@ Partial Class Form1
         Me.Nest_.Text = "Nest"
         Me.Nest_.UseVisualStyleBackColor = True
         '
-        'Clean
-        '
-        Me.Clean.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Clean.AutoSize = True
-        Me.Clean.Location = New System.Drawing.Point(26, 373)
-        Me.Clean.Name = "Clean"
-        Me.Clean.Size = New System.Drawing.Size(34, 13)
-        Me.Clean.TabIndex = 34
-        Me.Clean.Text = "Clean"
-        '
-        'Clean_
-        '
-        Me.Clean_.Location = New System.Drawing.Point(89, 363)
-        Me.Clean_.Name = "Clean_"
-        Me.Clean_.Size = New System.Drawing.Size(75, 23)
-        Me.Clean_.TabIndex = 35
-        Me.Clean_.Text = "Clean"
-        Me.Clean_.UseVisualStyleBackColor = True
-        '
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
@@ -430,6 +423,24 @@ Partial Class Form1
         Me.Label12.TabIndex = 23
         Me.Label12.Text = "gap"
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(3, 200)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(68, 13)
+        Me.Label13.TabIndex = 24
+        Me.Label13.Text = "Create Block"
+        '
+        'block
+        '
+        Me.block.Location = New System.Drawing.Point(89, 203)
+        Me.block.Name = "block"
+        Me.block.Size = New System.Drawing.Size(75, 23)
+        Me.block.TabIndex = 34
+        Me.block.Text = "Block"
+        Me.block.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -489,8 +500,9 @@ Partial Class Form1
     Friend WithEvents CountToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EditStartToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CircleToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Clean As Label
-    Friend WithEvents Clean_ As Button
     Friend WithEvents gap As NumericUpDown
     Friend WithEvents Label12 As Label
+    Friend WithEvents connect As Button
+    Friend WithEvents Label13 As Label
+    Friend WithEvents block As Button
 End Class
