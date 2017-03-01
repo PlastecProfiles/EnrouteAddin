@@ -47,6 +47,8 @@ Partial Class Form1
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Nest_ = New System.Windows.Forms.Button()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.block = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -58,8 +60,9 @@ Partial Class Form1
         Me.CircleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gap = New System.Windows.Forms.NumericUpDown()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.block = New System.Windows.Forms.Button()
+        Me.movex1 = New System.Windows.Forms.Button()
+        Me.movey1 = New System.Windows.Forms.Button()
+        Me.Label14 = New System.Windows.Forms.Label()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.X, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -191,6 +194,9 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.Nest_, 1, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.Label13, 0, 5)
         Me.TableLayoutPanel1.Controls.Add(Me.block, 1, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.movex1, 4, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.movey1, 5, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label14, 3, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(39, 70)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 11
@@ -334,6 +340,24 @@ Partial Class Form1
         Me.Nest_.Text = "Nest"
         Me.Nest_.UseVisualStyleBackColor = True
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(3, 200)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(68, 13)
+        Me.Label13.TabIndex = 24
+        Me.Label13.Text = "Create Block"
+        '
+        'block
+        '
+        Me.block.Location = New System.Drawing.Point(89, 203)
+        Me.block.Name = "block"
+        Me.block.Size = New System.Drawing.Size(75, 23)
+        Me.block.TabIndex = 34
+        Me.block.Text = "Block"
+        Me.block.UseVisualStyleBackColor = True
+        '
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
@@ -423,23 +447,32 @@ Partial Class Form1
         Me.Label12.TabIndex = 23
         Me.Label12.Text = "gap"
         '
-        'Label13
+        'movex1
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(3, 200)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(68, 13)
-        Me.Label13.TabIndex = 24
-        Me.Label13.Text = "Create Block"
+        Me.movex1.Location = New System.Drawing.Point(347, 3)
+        Me.movex1.Name = "movex1"
+        Me.movex1.Size = New System.Drawing.Size(75, 23)
+        Me.movex1.TabIndex = 24
+        Me.movex1.Text = "Move x"
+        Me.movex1.UseVisualStyleBackColor = True
         '
-        'block
+        'movey1
         '
-        Me.block.Location = New System.Drawing.Point(89, 203)
-        Me.block.Name = "block"
-        Me.block.Size = New System.Drawing.Size(75, 23)
-        Me.block.TabIndex = 34
-        Me.block.Text = "Block"
-        Me.block.UseVisualStyleBackColor = True
+        Me.movey1.Location = New System.Drawing.Point(433, 3)
+        Me.movey1.Name = "movey1"
+        Me.movey1.Size = New System.Drawing.Size(75, 23)
+        Me.movey1.TabIndex = 35
+        Me.movey1.Text = "Move y"
+        Me.movey1.UseVisualStyleBackColor = True
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(261, 0)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(69, 13)
+        Me.Label14.TabIndex = 36
+        Me.Label14.Text = "No alignment"
         '
         'Form1
         '
@@ -505,4 +538,7 @@ Partial Class Form1
     Friend WithEvents connect As Button
     Friend WithEvents Label13 As Label
     Friend WithEvents block As Button
+    Friend WithEvents movex1 As Button
+    Friend WithEvents movey1 As Button
+    Friend WithEvents Label14 As Label
 End Class

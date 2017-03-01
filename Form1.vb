@@ -334,7 +334,7 @@
             xxx = group.MaxX
             iterate1 = iterate1 + 1
         End While
-
+        doc.ReDraw()
 
         UpdateLog("Moveallx")
     End Sub
@@ -363,7 +363,7 @@
             yyy = group.MaxY
             iterate2 = iterate2 + 1
         End While
-
+        doc.ReDraw()
 
         UpdateLog("Moveally")
     End Sub
@@ -526,5 +526,63 @@
 
 
         UpdateLog("Block")
+    End Sub
+
+    Private Sub movex1_Click(sender As Object, e As EventArgs) Handles movex1.Click
+        Enr = New EnRoute3.EnrouteApp()
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
+
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+
+        If selec.Count = 0 Then
+            MsgBox("Select an object")
+        End If
+        Dim iterate1 = 0
+        Dim xxx = selec.MinX + NumericUpDown1.Value - gap.Value
+        While iterate1 < selec.Count
+            ID = selec.Members.Item(iterate1).MemberHandle
+            group = doc.FindGroup(ID)
+            group.MoveToTarget(xxx - NumericUpDown1.Value + gap.Value, group.MinY, group.MinZ, 0, 0, 0)
+            xxx = group.MaxX
+            iterate1 = iterate1 + 1
+        End While
+        doc.ReDraw()
+
+        UpdateLog("Movex")
+    End Sub
+
+    Private Sub movey1_Click(sender As Object, e As EventArgs) Handles movey1.Click
+        Enr = New EnRoute3.EnrouteApp()
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
+
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+
+        If selec.Count = 0 Then
+            MsgBox("Select an object")
+        End If
+        Dim iterate2 = 0
+        Dim yyy = selec.MinY + NumericUpDown1.Value - gap.Value
+        While iterate2 < selec.Count
+            ID = selec.Members.Item(iterate2).MemberHandle
+            group = doc.FindGroup(ID)
+            group.MoveToTarget(group.MinX, yyy - NumericUpDown1.Value + gap.Value, group.MinZ, 0, 0, 0)
+            yyy = group.MaxY
+            iterate2 = iterate2 + 1
+        End While
+        doc.ReDraw()
+
+        UpdateLog("Movey")
     End Sub
 End Class
