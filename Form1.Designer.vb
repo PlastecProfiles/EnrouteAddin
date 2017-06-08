@@ -49,11 +49,6 @@ Partial Class Form1
         Me.Nest_ = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.block = New System.Windows.Forms.Button()
-        Me.movex1 = New System.Windows.Forms.Button()
-        Me.movey1 = New System.Windows.Forms.Button()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.circle_down = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -65,6 +60,9 @@ Partial Class Form1
         Me.CircleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gap = New System.Windows.Forms.NumericUpDown()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.movex1 = New System.Windows.Forms.Button()
+        Me.movey1 = New System.Windows.Forms.Button()
+        Me.Label14 = New System.Windows.Forms.Label()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.X, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -75,30 +73,28 @@ Partial Class Form1
         'NumericUpDown1
         '
         Me.NumericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.NumericUpDown1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.NumericUpDown1.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.NumericUpDown1.DecimalPlaces = 4
         Me.NumericUpDown1.Increment = New Decimal(New Integer() {625, 0, 0, 262144})
-        Me.NumericUpDown1.Location = New System.Drawing.Point(81, 25)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(80, 25)
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(82, 20)
         Me.NumericUpDown1.TabIndex = 3
         '
         'Count
         '
-        Me.Count.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Count.Location = New System.Drawing.Point(89, 88)
+        Me.Count.Location = New System.Drawing.Point(89, 83)
         Me.Count.Name = "Count"
-        Me.Count.Size = New System.Drawing.Size(80, 23)
+        Me.Count.Size = New System.Drawing.Size(75, 23)
         Me.Count.TabIndex = 4
         Me.Count.Text = "Count"
         Me.Count.UseVisualStyleBackColor = True
         '
         'Edit_Start
         '
-        Me.Edit_Start.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Edit_Start.Location = New System.Drawing.Point(89, 128)
+        Me.Edit_Start.Location = New System.Drawing.Point(89, 123)
         Me.Edit_Start.Name = "Edit_Start"
-        Me.Edit_Start.Size = New System.Drawing.Size(80, 23)
+        Me.Edit_Start.Size = New System.Drawing.Size(75, 23)
         Me.Edit_Start.TabIndex = 5
         Me.Edit_Start.Text = "Edit Start"
         Me.Edit_Start.UseVisualStyleBackColor = True
@@ -123,20 +119,18 @@ Partial Class Form1
         '
         'Circle
         '
-        Me.Circle.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Circle.Location = New System.Drawing.Point(89, 168)
+        Me.Circle.Location = New System.Drawing.Point(89, 163)
         Me.Circle.Name = "Circle"
-        Me.Circle.Size = New System.Drawing.Size(80, 23)
+        Me.Circle.Size = New System.Drawing.Size(75, 23)
         Me.Circle.TabIndex = 11
         Me.Circle.Text = "Circle"
         Me.Circle.UseVisualStyleBackColor = True
         '
         'Circle_move
         '
-        Me.Circle_move.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Circle_move.Location = New System.Drawing.Point(89, 48)
+        Me.Circle_move.Location = New System.Drawing.Point(89, 43)
         Me.Circle_move.Name = "Circle_move"
-        Me.Circle_move.Size = New System.Drawing.Size(80, 23)
+        Me.Circle_move.Size = New System.Drawing.Size(75, 23)
         Me.Circle_move.TabIndex = 13
         Me.Circle_move.Text = "Circle move"
         Me.Circle_move.UseVisualStyleBackColor = True
@@ -153,22 +147,19 @@ Partial Class Form1
         '
         'selection
         '
-        Me.selection.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.selection.Location = New System.Drawing.Point(89, 328)
+        Me.selection.Location = New System.Drawing.Point(89, 323)
         Me.selection.Name = "selection"
-        Me.selection.Size = New System.Drawing.Size(80, 23)
+        Me.selection.Size = New System.Drawing.Size(75, 23)
         Me.selection.TabIndex = 18
         Me.selection.Text = "Select"
         Me.selection.UseVisualStyleBackColor = True
         '
         'X
         '
-        Me.X.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.X.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.X.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.X.Location = New System.Drawing.Point(261, 330)
+        Me.X.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.X.Location = New System.Drawing.Point(261, 323)
         Me.X.Name = "X"
-        Me.X.Size = New System.Drawing.Size(89, 20)
+        Me.X.Size = New System.Drawing.Size(80, 20)
         Me.X.TabIndex = 19
         '
         'TableLayoutPanel1
@@ -178,8 +169,8 @@ Partial Class Form1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.33977!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.86487!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.Controls.Add(Me.connect, 1, 9)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 0)
@@ -206,8 +197,6 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.movex1, 4, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.movey1, 5, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label14, 3, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label15, 3, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.circle_down, 4, 1)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(39, 70)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 11
@@ -227,10 +216,9 @@ Partial Class Form1
         '
         'connect
         '
-        Me.connect.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.connect.Location = New System.Drawing.Point(89, 368)
+        Me.connect.Location = New System.Drawing.Point(89, 363)
         Me.connect.Name = "connect"
-        Me.connect.Size = New System.Drawing.Size(80, 23)
+        Me.connect.Size = New System.Drawing.Size(75, 23)
         Me.connect.TabIndex = 24
         Me.connect.TabStop = False
         Me.connect.Text = "connect"
@@ -298,31 +286,28 @@ Partial Class Form1
         '
         'moveallx
         '
-        Me.moveallx.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.moveallx.Location = New System.Drawing.Point(89, 8)
+        Me.moveallx.Location = New System.Drawing.Point(89, 3)
         Me.moveallx.Name = "moveallx"
-        Me.moveallx.Size = New System.Drawing.Size(80, 23)
+        Me.moveallx.Size = New System.Drawing.Size(75, 23)
         Me.moveallx.TabIndex = 28
         Me.moveallx.Text = "Move x"
         Me.moveallx.UseVisualStyleBackColor = True
         '
         'moveally
         '
-        Me.moveally.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.moveally.Location = New System.Drawing.Point(175, 8)
+        Me.moveally.Location = New System.Drawing.Point(175, 3)
         Me.moveally.Name = "moveally"
-        Me.moveally.Size = New System.Drawing.Size(80, 23)
+        Me.moveally.Size = New System.Drawing.Size(75, 23)
         Me.moveally.TabIndex = 29
         Me.moveally.Text = "Move y"
         Me.moveally.UseVisualStyleBackColor = True
         '
         'Label9
         '
-        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(175, 333)
+        Me.Label9.Location = New System.Drawing.Point(175, 320)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(80, 13)
+        Me.Label9.Size = New System.Drawing.Size(14, 13)
         Me.Label9.TabIndex = 31
         Me.Label9.Text = "X"
         '
@@ -348,83 +333,30 @@ Partial Class Form1
         '
         'Nest_
         '
-        Me.Nest_.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Nest_.Location = New System.Drawing.Point(89, 288)
+        Me.Nest_.Location = New System.Drawing.Point(89, 283)
         Me.Nest_.Name = "Nest_"
-        Me.Nest_.Size = New System.Drawing.Size(80, 23)
+        Me.Nest_.Size = New System.Drawing.Size(75, 23)
         Me.Nest_.TabIndex = 33
         Me.Nest_.Text = "Nest"
         Me.Nest_.UseVisualStyleBackColor = True
         '
         'Label13
         '
-        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(3, 213)
+        Me.Label13.Location = New System.Drawing.Point(3, 200)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(80, 13)
+        Me.Label13.Size = New System.Drawing.Size(68, 13)
         Me.Label13.TabIndex = 24
         Me.Label13.Text = "Create Block"
         '
         'block
         '
-        Me.block.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.block.Location = New System.Drawing.Point(89, 208)
+        Me.block.Location = New System.Drawing.Point(89, 203)
         Me.block.Name = "block"
-        Me.block.Size = New System.Drawing.Size(80, 23)
+        Me.block.Size = New System.Drawing.Size(75, 23)
         Me.block.TabIndex = 34
         Me.block.Text = "Block"
         Me.block.UseVisualStyleBackColor = True
-        '
-        'movex1
-        '
-        Me.movex1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.movex1.Location = New System.Drawing.Point(356, 8)
-        Me.movex1.Name = "movex1"
-        Me.movex1.Size = New System.Drawing.Size(71, 23)
-        Me.movex1.TabIndex = 24
-        Me.movex1.Text = "Move x"
-        Me.movex1.UseVisualStyleBackColor = True
-        '
-        'movey1
-        '
-        Me.movey1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.movey1.Location = New System.Drawing.Point(433, 8)
-        Me.movey1.Name = "movey1"
-        Me.movey1.Size = New System.Drawing.Size(82, 23)
-        Me.movey1.TabIndex = 35
-        Me.movey1.Text = "Move y"
-        Me.movey1.UseVisualStyleBackColor = True
-        '
-        'Label14
-        '
-        Me.Label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(261, 13)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(89, 13)
-        Me.Label14.TabIndex = 36
-        Me.Label14.Text = "No alignment"
-        '
-        'Label15
-        '
-        Me.Label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(261, 53)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(89, 13)
-        Me.Label15.TabIndex = 24
-        Me.Label15.Text = "MoveCircleDown"
-        '
-        'circle_down
-        '
-        Me.circle_down.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.circle_down.Location = New System.Drawing.Point(356, 48)
-        Me.circle_down.Name = "circle_down"
-        Me.circle_down.Size = New System.Drawing.Size(71, 23)
-        Me.circle_down.TabIndex = 37
-        Me.circle_down.Text = "Circle move"
-        Me.circle_down.UseVisualStyleBackColor = True
         '
         'MenuStrip1
         '
@@ -496,7 +428,7 @@ Partial Class Form1
         'gap
         '
         Me.gap.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.gap.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.gap.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.gap.DecimalPlaces = 4
         Me.gap.Increment = New Decimal(New Integer() {1, 0, 0, 262144})
         Me.gap.Location = New System.Drawing.Point(280, 27)
@@ -509,11 +441,38 @@ Partial Class Form1
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(249, 29)
+        Me.Label12.Location = New System.Drawing.Point(229, 32)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(25, 13)
         Me.Label12.TabIndex = 23
         Me.Label12.Text = "gap"
+        '
+        'movex1
+        '
+        Me.movex1.Location = New System.Drawing.Point(347, 3)
+        Me.movex1.Name = "movex1"
+        Me.movex1.Size = New System.Drawing.Size(75, 23)
+        Me.movex1.TabIndex = 24
+        Me.movex1.Text = "Move x"
+        Me.movex1.UseVisualStyleBackColor = True
+        '
+        'movey1
+        '
+        Me.movey1.Location = New System.Drawing.Point(433, 3)
+        Me.movey1.Name = "movey1"
+        Me.movey1.Size = New System.Drawing.Size(75, 23)
+        Me.movey1.TabIndex = 35
+        Me.movey1.Text = "Move y"
+        Me.movey1.UseVisualStyleBackColor = True
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(261, 0)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(69, 13)
+        Me.Label14.TabIndex = 36
+        Me.Label14.Text = "No alignment"
         '
         'Form1
         '
@@ -582,6 +541,4 @@ Partial Class Form1
     Friend WithEvents movex1 As Button
     Friend WithEvents movey1 As Button
     Friend WithEvents Label14 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents circle_down As Button
 End Class
