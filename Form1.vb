@@ -105,7 +105,6 @@
         End While
 
 
-        UpdateLog("Selection")
 
     End Sub
 
@@ -142,7 +141,7 @@
         selec.Paste()
         selec.MoveToTarget(xxx, yyy, zzz, 0, 0, 0)
 
-        UpdateLog("Circle Move")
+
     End Sub
 
 
@@ -167,7 +166,7 @@
             MsgBox("Select an object")
         End If
         MsgBox(selec.Count)
-        UpdateLog("Count")
+
     End Sub
 
     Private Sub Edit_Start_Click(sender As Object, e As EventArgs) Handles Edit_Start.Click
@@ -190,7 +189,7 @@
         selec.ScaleBy(1, 1, 1)
         doc.ReDraw()
 
-        UpdateLog("Edit Start")
+
     End Sub
 
 
@@ -257,7 +256,7 @@
 
         End While
 
-        UpdateLog("Test")
+
 
 
 
@@ -301,7 +300,7 @@
         End While
         selec.DeleteMembers()
 
-        UpdateLog("Circle")
+
     End Sub
 
 
@@ -336,7 +335,6 @@
         End While
         doc.ReDraw()
 
-        UpdateLog("Moveallx")
     End Sub
 
     Private Sub moveally_Click(sender As Object, e As EventArgs) Handles moveally.Click
@@ -365,7 +363,7 @@
         End While
         doc.ReDraw()
 
-        UpdateLog("Moveally")
+
     End Sub
 
 
@@ -459,34 +457,10 @@
 
         End While
 
-        UpdateLog("Nest")
+
     End Sub
 
 
-
-    Private Sub XToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles XToolStripMenuItem.Click
-        moveallx.PerformClick()
-    End Sub
-
-    Private Sub YToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles YToolStripMenuItem.Click
-        moveally.PerformClick()
-    End Sub
-
-    Private Sub CircleMoveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CircleMoveToolStripMenuItem.Click
-        Circle_move.PerformClick()
-    End Sub
-
-    Private Sub CountToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CountToolStripMenuItem.Click
-        Count.PerformClick()
-    End Sub
-
-    Private Sub EditStartToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditStartToolStripMenuItem.Click
-        Edit_Start.PerformClick()
-    End Sub
-
-    Private Sub CircleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CircleToolStripMenuItem.Click
-        Circle.PerformClick()
-    End Sub
 
 
     Private Sub UpdateLog(ByVal funcName As String)
@@ -525,7 +499,7 @@
         End While
 
 
-        UpdateLog("Block")
+
     End Sub
 
     Private Sub movex1_Click(sender As Object, e As EventArgs) Handles movex1.Click
@@ -554,7 +528,7 @@
         End While
         doc.ReDraw()
 
-        UpdateLog("Movex")
+
     End Sub
 
     Private Sub movey1_Click(sender As Object, e As EventArgs) Handles movey1.Click
@@ -583,6 +557,47 @@
         End While
         doc.ReDraw()
 
-        UpdateLog("Movey")
+
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Enr = New EnRoute3.EnrouteApp()
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
+
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+
+        If selec.Count = 0 Then
+            MsgBox("Select an object")
+        End If
+        Dim iter1 = 0
+        While iter1 < selec.Count
+
+            ID = selec.Members.Item(iter1).MemberHandle
+            group = doc.FindGroup(ID)
+            Dim xxx = hole.Value
+
+
+            Dim ccx = group.MaxX - group.MinX
+            Dim ccy = group.MaxY - group.MinY
+            ccx = ccx / 2
+            ccy = ccy / 2
+            xxx = xxx / 2
+
+
+
+            layer.CreateCircle(group.MinX + ccx, group.MinY + ccy, xxx)
+            iter1 = iter1 + 1
+
+
+        End While
+        selec.DeleteMembers()
+
+    End Sub
+
 End Class

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="PlastecAddins.exe" version="3.3.0.20" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
-  <description asmv2:iconFile="PLASTEC LOGO .ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <asmv1:assemblyIdentity name="PlastecAddins.exe" version="6.0.0.37" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="logo.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="PlastecAddins" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -43,24 +43,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PlastecAddins.exe" size="75092464">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PlastecAddins.exe" size="414192">
       <assemblyIdentity name="PlastecAddins" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UWpV0UzkA6zj6J3JBKen0qzK6ikh10XA77bNXt5gMCU=</dsig:DigestValue>
+        <dsig:DigestValue>l17yepgSVuhIu1BzwDTCoNA96nM0NVAmy4oH5+QtNc4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="PLASTEC LOGO .ico" size="37529301">
+  <file name="logo.ico" size="185000">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>g4e9Jq2csnfrI+pytzGXYGlnYPR4P0lbw+TqOZ7Vm5M=</dsig:DigestValue>
+      <dsig:DigestValue>cKRUFU0HJK2fCtRB68Oyx3YKWjgwiMLsizYdiByj9Zg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PlastecAddins.exe.config" size="183">
@@ -69,7 +69,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>W3FZXfp6nic/JgBKAphnz5YgZAGfG4Qip/tcfHJexlE=</dsig:DigestValue>
+      <dsig:DigestValue>fqCFSMI71/18dcpyCsWg6MqUy1HQbNRev19BLku919c=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

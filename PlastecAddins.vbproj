@@ -160,7 +160,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="PlastecAddins_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="EnRoute3">

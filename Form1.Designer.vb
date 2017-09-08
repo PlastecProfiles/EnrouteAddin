@@ -34,6 +34,8 @@ Partial Class Form1
         Me.selection = New System.Windows.Forms.Button()
         Me.X = New System.Windows.Forms.NumericUpDown()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.hole = New System.Windows.Forms.NumericUpDown()
         Me.connect = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -49,31 +51,22 @@ Partial Class Form1
         Me.Nest_ = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.block = New System.Windows.Forms.Button()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.XToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.YToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CircleMoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditStartToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CircleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.gap = New System.Windows.Forms.NumericUpDown()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.movex1 = New System.Windows.Forms.Button()
         Me.movey1 = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.gap = New System.Windows.Forms.NumericUpDown()
+        Me.Label12 = New System.Windows.Forms.Label()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.X, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
+        CType(Me.hole, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gap, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NumericUpDown1
         '
         Me.NumericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.NumericUpDown1.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.NumericUpDown1.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.NumericUpDown1.DecimalPlaces = 4
         Me.NumericUpDown1.Increment = New Decimal(New Integer() {625, 0, 0, 262144})
         Me.NumericUpDown1.Location = New System.Drawing.Point(80, 25)
@@ -156,7 +149,7 @@ Partial Class Form1
         '
         'X
         '
-        Me.X.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.X.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.X.Location = New System.Drawing.Point(261, 323)
         Me.X.Name = "X"
         Me.X.Size = New System.Drawing.Size(80, 20)
@@ -172,6 +165,8 @@ Partial Class Form1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Button1, 5, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.hole, 5, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.connect, 1, 9)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.selection, 1, 8)
@@ -213,6 +208,24 @@ Partial Class Form1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(518, 443)
         Me.TableLayoutPanel1.TabIndex = 20
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(433, 83)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 24
+        Me.Button1.Text = "Hole Resize"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'hole
+        '
+        Me.hole.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.hole.DecimalPlaces = 4
+        Me.hole.Location = New System.Drawing.Point(433, 123)
+        Me.hole.Name = "hole"
+        Me.hole.Size = New System.Drawing.Size(79, 20)
+        Me.hole.TabIndex = 25
         '
         'connect
         '
@@ -358,95 +371,6 @@ Partial Class Form1
         Me.block.Text = "Block"
         Me.block.UseVisualStyleBackColor = True
         '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolsToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 1, 0, 1)
-        Me.MenuStrip1.Size = New System.Drawing.Size(709, 24)
-        Me.MenuStrip1.TabIndex = 21
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'ToolsToolStripMenuItem
-        '
-        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MoveToolStripMenuItem, Me.CircleMoveToolStripMenuItem, Me.CountToolStripMenuItem, Me.EditStartToolStripMenuItem, Me.CircleToolStripMenuItem})
-        Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(47, 22)
-        Me.ToolsToolStripMenuItem.Text = "&Tools"
-        '
-        'MoveToolStripMenuItem
-        '
-        Me.MoveToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.XToolStripMenuItem, Me.YToolStripMenuItem})
-        Me.MoveToolStripMenuItem.Name = "MoveToolStripMenuItem"
-        Me.MoveToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.MoveToolStripMenuItem.Text = "&Move"
-        '
-        'XToolStripMenuItem
-        '
-        Me.XToolStripMenuItem.Name = "XToolStripMenuItem"
-        Me.XToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.XToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
-        Me.XToolStripMenuItem.Text = "&X"
-        '
-        'YToolStripMenuItem
-        '
-        Me.YToolStripMenuItem.Name = "YToolStripMenuItem"
-        Me.YToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.B), System.Windows.Forms.Keys)
-        Me.YToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
-        Me.YToolStripMenuItem.Text = "&Y"
-        '
-        'CircleMoveToolStripMenuItem
-        '
-        Me.CircleMoveToolStripMenuItem.Name = "CircleMoveToolStripMenuItem"
-        Me.CircleMoveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CircleMoveToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.CircleMoveToolStripMenuItem.Text = "&Circle Move"
-        '
-        'CountToolStripMenuItem
-        '
-        Me.CountToolStripMenuItem.Name = "CountToolStripMenuItem"
-        Me.CountToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
-        Me.CountToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.CountToolStripMenuItem.Text = "Co&unt"
-        '
-        'EditStartToolStripMenuItem
-        '
-        Me.EditStartToolStripMenuItem.Name = "EditStartToolStripMenuItem"
-        Me.EditStartToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.EditStartToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.EditStartToolStripMenuItem.Text = "&Edit Start"
-        '
-        'CircleToolStripMenuItem
-        '
-        Me.CircleToolStripMenuItem.Name = "CircleToolStripMenuItem"
-        Me.CircleToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
-        Me.CircleToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.CircleToolStripMenuItem.Text = "Circ&le"
-        '
-        'gap
-        '
-        Me.gap.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.gap.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.gap.DecimalPlaces = 4
-        Me.gap.Increment = New Decimal(New Integer() {1, 0, 0, 262144})
-        Me.gap.Location = New System.Drawing.Point(280, 27)
-        Me.gap.Minimum = New Decimal(New Integer() {1, 0, 0, 262144})
-        Me.gap.Name = "gap"
-        Me.gap.Size = New System.Drawing.Size(82, 20)
-        Me.gap.TabIndex = 22
-        Me.gap.Value = New Decimal(New Integer() {1, 0, 0, 262144})
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(229, 32)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(25, 13)
-        Me.Label12.TabIndex = 23
-        Me.Label12.Text = "gap"
-        '
         'movex1
         '
         Me.movex1.Location = New System.Drawing.Point(347, 3)
@@ -474,6 +398,28 @@ Partial Class Form1
         Me.Label14.TabIndex = 36
         Me.Label14.Text = "No alignment"
         '
+        'gap
+        '
+        Me.gap.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.gap.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.gap.DecimalPlaces = 4
+        Me.gap.Increment = New Decimal(New Integer() {1, 0, 0, 262144})
+        Me.gap.Location = New System.Drawing.Point(280, 27)
+        Me.gap.Minimum = New Decimal(New Integer() {1, 0, 0, 262144})
+        Me.gap.Name = "gap"
+        Me.gap.Size = New System.Drawing.Size(82, 20)
+        Me.gap.TabIndex = 22
+        Me.gap.Value = New Decimal(New Integer() {1, 0, 0, 262144})
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(229, 32)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(25, 13)
+        Me.Label12.TabIndex = 23
+        Me.Label12.Text = "gap"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -485,7 +431,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.NumericUpDown1)
-        Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.Text = "PlastecAddins"
@@ -494,8 +439,7 @@ Partial Class Form1
         CType(Me.X, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        CType(Me.hole, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gap, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -524,15 +468,6 @@ Partial Class Form1
     Friend WithEvents Label9 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Nest_ As Button
-    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents ToolsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MoveToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents XToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents YToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CircleMoveToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CountToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EditStartToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CircleToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents gap As NumericUpDown
     Friend WithEvents Label12 As Label
     Friend WithEvents connect As Button
@@ -541,4 +476,6 @@ Partial Class Form1
     Friend WithEvents movex1 As Button
     Friend WithEvents movey1 As Button
     Friend WithEvents Label14 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents hole As NumericUpDown
 End Class
