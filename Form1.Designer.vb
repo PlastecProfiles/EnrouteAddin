@@ -56,6 +56,8 @@ Partial Class Form1
         Me.Label14 = New System.Windows.Forms.Label()
         Me.gap = New System.Windows.Forms.NumericUpDown()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.cmdown = New System.Windows.Forms.Button()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.X, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -192,6 +194,8 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.movex1, 4, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.movey1, 5, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label14, 3, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label15, 2, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.cmdown, 3, 1)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(39, 70)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 11
@@ -420,6 +424,26 @@ Partial Class Form1
         Me.Label12.TabIndex = 23
         Me.Label12.Text = "gap"
         '
+        'Label15
+        '
+        Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(182, 47)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(65, 26)
+        Me.Label15.TabIndex = 37
+        Me.Label15.Text = "Circle move down"
+        '
+        'cmdown
+        '
+        Me.cmdown.Location = New System.Drawing.Point(261, 43)
+        Me.cmdown.Name = "cmdown"
+        Me.cmdown.Size = New System.Drawing.Size(75, 23)
+        Me.cmdown.TabIndex = 38
+        Me.cmdown.Text = "C m down"
+        Me.cmdown.UseCompatibleTextRendering = True
+        Me.cmdown.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -478,4 +502,6 @@ Partial Class Form1
     Friend WithEvents Label14 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents hole As NumericUpDown
+    Friend WithEvents Label15 As Label
+    Friend WithEvents cmdown As Button
 End Class

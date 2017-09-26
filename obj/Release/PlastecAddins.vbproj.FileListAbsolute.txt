@@ -28,4 +28,3 @@ C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\Plas
 C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Release\PlastecAddins.exe
 C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Release\PlastecAddins.xml
 C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Release\PlastecAddins.pdb
-C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Release\PlastecAddins.vbprojResolveAssemblyReference.cache

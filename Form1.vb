@@ -600,4 +600,39 @@
 
     End Sub
 
+    Private Sub cmdown_Click(sender As Object, e As EventArgs) Handles cmdown.Click
+
+        Enr = New EnRoute3.EnrouteApp
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
+
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+        group = layer.CreateGroup
+        If selec.Count = 0 Then
+            MsgBox("Select an object")
+        End If
+
+        bit = NumericUpDown1.Value
+        Dim ddd = selec.MaxX - selec.MinX
+
+        dia = ddd - bit
+        ' Dim bit2 = bit / 2
+
+        contour = group.CreateRect(selec.MinX, selec.MinY, 0, selec.MinX, selec.MaxY - bit + gap.Value, 0)
+
+        contour.RotateXY(-120, selec.MinX, selec.MinY)
+        Dim xxx = contour.MaxX
+        Dim yyy = contour.MinY
+        Dim zzz = selec.MinZ
+
+        selec.MoveToTarget(xxx, yyy, zzz, 0, 0, 0)
+
+
+
+    End Sub
 End Class
