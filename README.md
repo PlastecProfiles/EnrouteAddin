@@ -9,5 +9,5 @@ to be sure you have the latest one you should build this.
 To do:
 1. Experiment with nesting.
 
-2 Clean up the code. I have been so excited about being able to make these that I didn't focus on keeping code topnotch.
+2. Clean up the code. I have been so excited about being able to make these that I didn't focus on keeping code topnotch.
 
