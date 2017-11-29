@@ -28,4 +28,3 @@ C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\Plas
 C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.TrustInfo.xml
 C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.exe.manifest
 C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.application
-C:\Users\Matthew Martin\Documents\Visual Studio 2015\Projects\PlastecAddins\PlastecAddins\obj\Debug\PlastecAddins.vbprojResolveAssemblyReference.cache
