@@ -38,26 +38,26 @@ Partial Class Form1
         Me.hole = New System.Windows.Forms.NumericUpDown()
         Me.connect = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.moveallx = New System.Windows.Forms.Button()
         Me.moveally = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Nest_ = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.block = New System.Windows.Forms.Button()
         Me.movex1 = New System.Windows.Forms.Button()
         Me.movey1 = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.gap = New System.Windows.Forms.NumericUpDown()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.cmdown = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Nest_ = New System.Windows.Forms.Button()
+        Me.gap = New System.Windows.Forms.NumericUpDown()
+        Me.Label12 = New System.Windows.Forms.Label()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.X, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -127,7 +127,7 @@ Partial Class Form1
         Me.Circle_move.Name = "Circle_move"
         Me.Circle_move.Size = New System.Drawing.Size(75, 23)
         Me.Circle_move.TabIndex = 13
-        Me.Circle_move.Text = "Circle move"
+        Me.Circle_move.Text = "Circle move x"
         Me.Circle_move.UseVisualStyleBackColor = True
         '
         'Label2
@@ -142,7 +142,7 @@ Partial Class Form1
         '
         'selection
         '
-        Me.selection.Location = New System.Drawing.Point(89, 323)
+        Me.selection.Location = New System.Drawing.Point(89, 243)
         Me.selection.Name = "selection"
         Me.selection.Size = New System.Drawing.Size(75, 23)
         Me.selection.TabIndex = 18
@@ -152,7 +152,9 @@ Partial Class Form1
         'X
         '
         Me.X.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.X.Location = New System.Drawing.Point(261, 323)
+        Me.X.DecimalPlaces = 4
+        Me.X.Increment = New Decimal(New Integer() {625, 0, 0, 262144})
+        Me.X.Location = New System.Drawing.Point(261, 243)
         Me.X.Name = "X"
         Me.X.Size = New System.Drawing.Size(80, 20)
         Me.X.TabIndex = 19
@@ -171,8 +173,6 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.hole, 5, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.connect, 1, 9)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.selection, 1, 8)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label10, 0, 8)
         Me.TableLayoutPanel1.Controls.Add(Me.Label6, 0, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.Circle, 1, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.Label5, 0, 3)
@@ -184,11 +184,6 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.Test, 1, 10)
         Me.TableLayoutPanel1.Controls.Add(Me.moveallx, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.moveally, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.X, 3, 8)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label9, 2, 8)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 6)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label11, 0, 7)
-        Me.TableLayoutPanel1.Controls.Add(Me.Nest_, 1, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.Label13, 0, 5)
         Me.TableLayoutPanel1.Controls.Add(Me.block, 1, 5)
         Me.TableLayoutPanel1.Controls.Add(Me.movex1, 4, 0)
@@ -196,6 +191,13 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.Label14, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label15, 2, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.cmdown, 3, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.selection, 1, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label10, 0, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.X, 3, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label9, 2, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label11, 0, 8)
+        Me.TableLayoutPanel1.Controls.Add(Me.Nest_, 1, 8)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(39, 70)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 11
@@ -250,16 +252,6 @@ Partial Class Form1
         Me.Label4.Size = New System.Drawing.Size(34, 13)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Move"
-        '
-        'Label10
-        '
-        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(24, 333)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(37, 13)
-        Me.Label10.TabIndex = 26
-        Me.Label10.Text = "Select"
         '
         'Label6
         '
@@ -319,44 +311,6 @@ Partial Class Form1
         Me.moveally.Text = "Move y"
         Me.moveally.UseVisualStyleBackColor = True
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(175, 320)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(14, 13)
-        Me.Label9.TabIndex = 31
-        Me.Label9.Text = "X"
-        '
-        'Label8
-        '
-        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(9, 253)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(67, 13)
-        Me.Label8.TabIndex = 24
-        Me.Label8.Text = "Experimental"
-        '
-        'Label11
-        '
-        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(28, 293)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(29, 13)
-        Me.Label11.TabIndex = 32
-        Me.Label11.Text = "Nest"
-        '
-        'Nest_
-        '
-        Me.Nest_.Location = New System.Drawing.Point(89, 283)
-        Me.Nest_.Name = "Nest_"
-        Me.Nest_.Size = New System.Drawing.Size(75, 23)
-        Me.Nest_.TabIndex = 33
-        Me.Nest_.Text = "Nest"
-        Me.Nest_.UseVisualStyleBackColor = True
-        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -402,6 +356,74 @@ Partial Class Form1
         Me.Label14.TabIndex = 36
         Me.Label14.Text = "No alignment"
         '
+        'Label15
+        '
+        Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(182, 47)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(65, 26)
+        Me.Label15.TabIndex = 37
+        Me.Label15.Text = "Circle move down"
+        '
+        'cmdown
+        '
+        Me.cmdown.Location = New System.Drawing.Point(261, 43)
+        Me.cmdown.Name = "cmdown"
+        Me.cmdown.Size = New System.Drawing.Size(80, 23)
+        Me.cmdown.TabIndex = 38
+        Me.cmdown.Text = "Circle Move y"
+        Me.cmdown.UseCompatibleTextRendering = True
+        Me.cmdown.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(9, 293)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(67, 13)
+        Me.Label8.TabIndex = 24
+        Me.Label8.Text = "Experimental"
+        '
+        'Label10
+        '
+        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(24, 253)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(37, 13)
+        Me.Label10.TabIndex = 26
+        Me.Label10.Text = "Select"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(175, 240)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(14, 13)
+        Me.Label9.TabIndex = 31
+        Me.Label9.Text = "X"
+        '
+        'Label11
+        '
+        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(28, 333)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(29, 13)
+        Me.Label11.TabIndex = 32
+        Me.Label11.Text = "Nest"
+        '
+        'Nest_
+        '
+        Me.Nest_.Location = New System.Drawing.Point(89, 323)
+        Me.Nest_.Name = "Nest_"
+        Me.Nest_.Size = New System.Drawing.Size(75, 23)
+        Me.Nest_.TabIndex = 33
+        Me.Nest_.Text = "Nest"
+        Me.Nest_.UseVisualStyleBackColor = True
+        '
         'gap
         '
         Me.gap.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -423,26 +445,6 @@ Partial Class Form1
         Me.Label12.Size = New System.Drawing.Size(25, 13)
         Me.Label12.TabIndex = 23
         Me.Label12.Text = "gap"
-        '
-        'Label15
-        '
-        Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(182, 47)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(65, 26)
-        Me.Label15.TabIndex = 37
-        Me.Label15.Text = "Circle move down"
-        '
-        'cmdown
-        '
-        Me.cmdown.Location = New System.Drawing.Point(261, 43)
-        Me.cmdown.Name = "cmdown"
-        Me.cmdown.Size = New System.Drawing.Size(75, 23)
-        Me.cmdown.TabIndex = 38
-        Me.cmdown.Text = "C m down"
-        Me.cmdown.UseCompatibleTextRendering = True
-        Me.cmdown.UseVisualStyleBackColor = True
         '
         'Form1
         '

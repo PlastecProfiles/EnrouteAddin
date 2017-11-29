@@ -64,7 +64,7 @@
     '       ComboBox1.Items.Add(Enr.Strategies.Item(stratiter).StrategyId & Enr.Strategies.Item(stratiter).Name)
     'End While
     'End Sub
-    
+
 
 
 
@@ -84,29 +84,38 @@
             MsgBox("Select an object")
         End If
 
-
-
         Dim aaa = 0
         Dim selection = 0
         Dim bbb = X.Value
-        Dim count = selec.Count
 
+        Dim size = 0.0
+        While aaa < selec.Count
 
-
-        While aaa < count
             ID = selec.Members.Item(aaa).MemberHandle
             group = doc.FindGroup(ID)
-            Dim size = group.MaxX - group.MinX
+            size = group.MaxX - group.MinX
+            size = size * 10000
+            size = Math.Round(size)
+            size = size / 10000
+
+
+            If size <> bbb Then
+                group.UnSelect()
+            End If
             If size = bbb Then
-                selec.SelectNone()
-                group.Select()
                 aaa = aaa + 1
             End If
         End While
-
-
-
     End Sub
+
+    '  Private Sub UpdateLog(ByVal funcName As String)
+    ' Dim objFile As New System.IO.StreamWriter("\\Server\Customer Files\PlastecAddins\ addinlog.txt", True)
+    '    objFile.WriteLine(My.User.Name & " " & Today & " " & funcName)
+    '   objFile.Close()
+    '  objFile.Dispose()
+    'End Sub
+
+
 
     Private Sub Circle_move_Click(sender As Object, e As EventArgs) Handles Circle_move.Click
         Enr = New EnRoute3.EnrouteApp
@@ -136,9 +145,6 @@
         Dim xxx = contour.MaxX
         Dim yyy = contour.MaxY
         Dim zzz = selec.MinZ
-        selec.Copy()
-        Clipboard.SetData("Format", selec)
-        selec.Paste()
         selec.MoveToTarget(xxx, yyy, zzz, 0, 0, 0)
 
 
@@ -463,16 +469,9 @@
 
 
 
-    Private Sub UpdateLog(ByVal funcName As String)
-        Dim objFile As New System.IO.StreamWriter("\\DESKTOP-GQO3164\Customer Files\PlastecAddins\ addinlog.txt", True)
-        objFile.WriteLine(My.User.Name & " " & Today & " " & funcName)
-        objFile.Close()
-        objFile.Dispose()
-    End Sub
 
-    Private Sub connect_Click(sender As Object, e As EventArgs) Handles connect.Click
 
-    End Sub
+
 
     Private Sub block_Click(sender As Object, e As EventArgs) Handles block.Click
         Enr = New EnRoute3.EnrouteApp()
@@ -635,4 +634,6 @@
 
 
     End Sub
+
+
 End Class
