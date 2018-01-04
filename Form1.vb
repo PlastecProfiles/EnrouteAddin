@@ -635,5 +635,143 @@
 
     End Sub
 
+    Private Sub singlfy_Click(sender As Object, e As EventArgs) Handles singlfy.Click
+        Enr = New EnRoute3.EnrouteApp()
+        doc = Enr.ActiveDrawing
+        totalArea = 0.0
+
+        If doc Is Nothing Then
+            MsgBox("No Active File")
+            End
+        End If
+        layer = doc.ActiveLayer
+        selec = doc.Selection
+
+
+        If selec.Count = 0 Then
+            MsgBox("Select an object")
+        End If
+        group = layer.CreateGroup
+        contour = group.CreateContour
+
+        Dim iii = 0
+        Dim ooo = 0
+        Dim xxx = 0
+        Dim yyy = 0
+        Dim zzz = 0
+        Dim aaa = 0
+        Dim ysize = selec.MaxY - selec.MinY
+        MsgBox(contour.SegCount)
+
+        While iii < selec.Count
+            contour = selec.Item(iii).Item(iii)
+            iii = iii + 1
+            MsgBox(iii)
+            While ooo < contour.SegCount
+
+                seg = contour.Seg(ooo)
+                ID = seg.SegID
+                IDNumber(ooo) = ID
+                If ID = 0 Then
+                    lin = seg
+                    startx(ooo) = lin.StartX
+                    starty(ooo) = lin.StartY
+                    startz(ooo) = lin.StartZ
+                    While xxx <= ooo
+                        If lin.StartX = startx(xxx) And lin.StartY = starty(xxx) And lin.StartZ = startz(xxx) Then
+
+                            xxx = xxx + 1
+                        Else
+                            lin.StartX = startx(ooo)
+                            lin.StartY = starty(ooo) + ysize
+                            lin.StartZ = startz(ooo)
+                        End If
+
+
+                    End While
+
+                End If
+
+                    If ID = 1 Then
+                    arc = seg
+                    startx(ooo) = arc.StartX
+                    starty(ooo) = arc.StartY
+                    startz(ooo) = arc.StartZ
+                    angle(ooo) = arc.SweepAngle
+                    centerx(ooo) = arc.CenterX
+                    centery(ooo) = arc.CenterY
+                    centerz(ooo) = arc.CenterZ
+                    While yyy <= ooo
+                        If arc.StartX = startx(yyy) And arc.StartY = starty(yyy) And arc.StartZ = startz(yyy) And arc.SweepAngle = angle(yyy) And arc.CenterX = centerx(yyy) And arc.CenterY = centery(yyy) And arc.CenterZ = centerz(yyy) Then
+                            yyy = yyy + 1
+                        Else
+                            arc.StartX = startx(ooo)
+                            arc.StartY = starty(ooo) + ysize
+                            arc.StartZ = startz(ooo)
+                            arc.CenterX = centerx(ooo)
+                            arc.CenterY = centery(ooo) + ysize
+                            arc.CenterZ = centerz(ooo)
+                        End If
+                    End While
+
+
+                End If
+                If ID = 2 Then
+                    bez = seg
+                    startx(ooo) = bez.StartX
+                    starty(ooo) = bez.StartY
+                    startz(ooo) = bez.StartZ
+                    c1x(ooo) = bez.Control1X
+                    c1y(ooo) = bez.Control1Y
+                    c1z(ooo) = bez.Control1Z
+                    c2x(ooo) = bez.Control2X
+                    c2y(ooo) = bez.Control2Y
+                    c2z(ooo) = bez.Control2Z
+                    While zzz <= ooo
+                        If bez.StartX = startx(zzz) And bez.StartY = starty(zzz) And bez.StartZ = startz(zzz) And bez.Control1X = c1x(zzz) And bez.Control1Y = c1y(zzz) And bez.Control1Z = c1z(zzz) And bez.Control2X = c2x(zzz) And bez.Control2Y = c2y(zzz) And bez.Control2Z = c2z(zzz) Then
+
+                            zzz = zzz + 1
+                        Else
+                            bez.StartX = startx(ooo)
+                            bez.StartY = starty(ooo) + ysize
+
+                        End If
+                    End While
+                End If
+                If ID = 3 Then
+                    rbez = seg
+                    startx(ooo) = rbez.StartX
+                    starty(ooo) = rbez.StartY
+                    startz(ooo) = rbez.StartZ
+                    c1x(ooo) = rbez.Control1X
+                    c1y(ooo) = rbez.Control1Y
+                    c1z(ooo) = rbez.Control1Z
+                    c2x(ooo) = rbez.Control2X
+                    c2y(ooo) = rbez.Control2Y
+                    c2z(ooo) = rbez.Control2Z
+                    w0(ooo) = rbez.Weight0
+                    w1(ooo) = rbez.Weight1
+                    w2(ooo) = rbez.Weight2
+                    w3(ooo) = rbez.Weight3
+                    While aaa <= ooo
+                        If rbez.StartX = startx(aaa) And rbez.StartY = starty(aaa) And rbez.StartZ = startz(aaa) And rbez.Control1X = c1x(aaa) And rbez.Control1Y = c1y(aaa) And rbez.Control1Z = c1z(aaa) And rbez.Control2X = c2x(aaa) And rbez.Control2Y = c2y(aaa) And rbez.Control2Z = c2z(aaa) And rbez.Weight0 = w0(aaa) And rbez.Weight1 = w1(aaa) And rbez.Weight2 = w2(aaa) And rbez.Weight3 = w3(aaa) Then
+
+                            aaa = aaa + 1
+                        End If
+                    End While
+                End If
+                If ID = 4 Then
+
+
+                    MsgBox("terminater")
+                End If
+                ooo = ooo + 1
+            End While
+
+        End While
+
+
+    End Sub
+
 
 End Class

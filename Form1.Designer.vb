@@ -34,9 +34,6 @@ Partial Class Form1
         Me.selection = New System.Windows.Forms.Button()
         Me.X = New System.Windows.Forms.NumericUpDown()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.hole = New System.Windows.Forms.NumericUpDown()
-        Me.connect = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -56,6 +53,9 @@ Partial Class Form1
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Nest_ = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.hole = New System.Windows.Forms.NumericUpDown()
+        Me.singlfy = New System.Windows.Forms.Button()
         Me.gap = New System.Windows.Forms.NumericUpDown()
         Me.Label12 = New System.Windows.Forms.Label()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -169,9 +169,6 @@ Partial Class Form1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Button1, 5, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.hole, 5, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.connect, 1, 9)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label6, 0, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.Circle, 1, 4)
@@ -198,6 +195,9 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.Label9, 2, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.Label11, 0, 8)
         Me.TableLayoutPanel1.Controls.Add(Me.Nest_, 1, 8)
+        Me.TableLayoutPanel1.Controls.Add(Me.Button1, 4, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.hole, 5, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.singlfy, 2, 8)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(39, 70)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 11
@@ -214,34 +214,6 @@ Partial Class Form1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(518, 443)
         Me.TableLayoutPanel1.TabIndex = 20
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(433, 83)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 24
-        Me.Button1.Text = "Hole Resize"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'hole
-        '
-        Me.hole.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.hole.DecimalPlaces = 4
-        Me.hole.Location = New System.Drawing.Point(433, 123)
-        Me.hole.Name = "hole"
-        Me.hole.Size = New System.Drawing.Size(79, 20)
-        Me.hole.TabIndex = 25
-        '
-        'connect
-        '
-        Me.connect.Location = New System.Drawing.Point(89, 363)
-        Me.connect.Name = "connect"
-        Me.connect.Size = New System.Drawing.Size(75, 23)
-        Me.connect.TabIndex = 24
-        Me.connect.TabStop = False
-        Me.connect.Text = "connect"
-        Me.connect.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -424,6 +396,33 @@ Partial Class Form1
         Me.Nest_.Text = "Nest"
         Me.Nest_.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(347, 83)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 24
+        Me.Button1.Text = "Hole Resize"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'hole
+        '
+        Me.hole.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.hole.DecimalPlaces = 4
+        Me.hole.Location = New System.Drawing.Point(433, 83)
+        Me.hole.Name = "hole"
+        Me.hole.Size = New System.Drawing.Size(79, 20)
+        Me.hole.TabIndex = 25
+        '
+        'singlfy
+        '
+        Me.singlfy.Location = New System.Drawing.Point(175, 323)
+        Me.singlfy.Name = "singlfy"
+        Me.singlfy.Size = New System.Drawing.Size(75, 23)
+        Me.singlfy.TabIndex = 39
+        Me.singlfy.Text = "Singlfy"
+        Me.singlfy.UseVisualStyleBackColor = True
+        '
         'gap
         '
         Me.gap.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -496,7 +495,6 @@ Partial Class Form1
     Friend WithEvents Nest_ As Button
     Friend WithEvents gap As NumericUpDown
     Friend WithEvents Label12 As Label
-    Friend WithEvents connect As Button
     Friend WithEvents Label13 As Label
     Friend WithEvents block As Button
     Friend WithEvents movex1 As Button
@@ -506,4 +504,5 @@ Partial Class Form1
     Friend WithEvents hole As NumericUpDown
     Friend WithEvents Label15 As Label
     Friend WithEvents cmdown As Button
+    Friend WithEvents singlfy As Button
 End Class
