@@ -635,6 +635,11 @@
 
     End Sub
 
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub singlfy_Click(sender As Object, e As EventArgs) Handles singlfy.Click
         Enr = New EnRoute3.EnrouteApp()
         doc = Enr.ActiveDrawing
@@ -661,19 +666,21 @@
         Dim zzz = 0
         Dim aaa = 0
         Dim ysize = selec.MaxY - selec.MinY
-        MsgBox(contour.SegCount)
-
+        Dim secount = contour.SegCount
+        MsgBox(secount)
         While iii < selec.Count
             contour = selec.Item(iii).Item(iii)
             iii = iii + 1
-            MsgBox(iii)
-            While ooo < contour.SegCount
+
+            While ooo < secount
 
                 seg = contour.Seg(ooo)
                 ID = seg.SegID
+                MsgBox(ID)
                 IDNumber(ooo) = ID
                 If ID = 0 Then
                     lin = seg
+
                     startx(ooo) = lin.StartX
                     starty(ooo) = lin.StartY
                     startz(ooo) = lin.StartZ
@@ -732,8 +739,10 @@
 
                             zzz = zzz + 1
                         Else
-                            bez.StartX = startx(ooo)
-                            bez.StartY = starty(ooo) + ysize
+                            '   bez.StartX = startx(ooo)
+                            '   bez.StartY = starty(ooo) + ysize
+                            ' bez.StartZ = startz(ooo)
+                            '  bez.Control1X = c1x(ooo)
 
                         End If
                     End While
@@ -762,10 +771,14 @@
                 End If
                 If ID = 4 Then
 
+                    If ooo < secount Then
+                        ooo = ooo + 1
+                    Else
+                        MsgBox("terminater")
+                    End If
 
-                    MsgBox("terminater")
                 End If
-                ooo = ooo + 1
+                    ooo = ooo + 1
             End While
 
         End While

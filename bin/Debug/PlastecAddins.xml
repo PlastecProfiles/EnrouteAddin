@@ -22,5 +22,12 @@ PlastecAddins
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:PlastecAddins.Form1.singlfy_Click(System.Object,System.EventArgs)">
+ <summary>
+ 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
 </members>
 </doc>
